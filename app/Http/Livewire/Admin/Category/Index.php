@@ -19,7 +19,7 @@ class Index extends Component
         $this->category_id = $category_id;
     }
 
-    public function destroyCategory($category_id)
+    public function destroyCategory()
     {
         $category = Category::find($this->category_id);
         $path = 'uploads/category/'.$category->image;
