@@ -3,20 +3,20 @@
         <div wire:ignore.self class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Delete Category</h5>
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Delete Category</h5>
+                    </div>
+                    <form wire:submit.prevent="destroyCategory">
+                        @csrf
+                        <div class="modal-body">
+                            <h6>Are you sure you want to delete this?</h6>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No, go back</button>
+                            <button type="submit" class="btn btn-primary text-white">Yes, I'm sure</button>
+                        </div>
+                    </form>
                 </div>
-                <form wire:submit.prevent="destroyCategory">
-                    @csrf
-                    <div class="modal-body">
-                        <h6>Are you sure you want to delete this?</h6>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No, go back</button>
-                        <button type="submit" class="btn btn-primary text-white">Yes, I'm sure</button>
-                    </div>
-                    </div>
-                </form>
             </div>
         </div>
         <div class="row">
