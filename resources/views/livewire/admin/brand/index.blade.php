@@ -28,8 +28,8 @@
                                     <td>{{$brand->slug}}</td>
                                     <td>{{$brand->status == 1 ? 'hidden' : 'visible'}}</td>
                                     <td>
-                                        <a href="" class="btn btn-sm btn-success text-white">Edit</a>
-                                        <a href="" class="btn btn-sm btn-danger text-white">Delete</a>
+                                        <a href="#" wire:click="editBrand({{$brand->id}})" data-bs-toggle="modal" data-bs-target="#updateBrandModal" class="btn btn-sm btn-success text-white">Edit</a>
+                                        <a href="#" wire:click="deleteBrand({{$brand->id}})" data-bs-toggle="modal" data-bs-target="#deleteBrandModal" class="btn btn-sm btn-danger text-white">Delete</a>
                                     </td>
                                 </tr>
                             @empty
@@ -47,13 +47,12 @@
         </div>
     </div>
 </div>
-
 @push('script')
-
-    <script>
-        window.addEventListener('close-modal', event =>{
-            $('#addBrandModal').modal('hide');
-        });
-    </script>
-
-    @endpush
+<script>
+    window.addEventListener('close-modal', event =>{
+        $('#addBrandModal').modal('hide');
+        $('#updateBrandModal').modal('hide');
+        $('#deleteBrandModal').modal('hide');
+    });
+</script>
+@endpush
