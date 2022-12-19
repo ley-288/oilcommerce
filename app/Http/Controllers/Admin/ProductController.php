@@ -45,6 +45,22 @@ class ProductController extends Controller
             'meta_description' => $validatedData['meta_description']
         ]);
 
-        return $product->id;
+        if($request->hasFile('image')){
+            $uploadPath = 'uploads/products/';
+            $i = 1;
+            foreach($request->file('image') as $imageFile){
+                $extension = $imageFile->getClientOriginalExtension();
+                $filename = time().$i++.'.'.$extension;
+                $imageFile->move($uploadPath, $filename);
+                $finalImagePathName = $uploadPath.$filename;
+
+                $product->productImages()->create([
+                    'product_id' => $product->id,
+                    'image' => $finalImagePathName,
+                ]);
+            }
+        }
+
+        return redirect('/admin/products')->with('message', 'Product added');
     }
 }
