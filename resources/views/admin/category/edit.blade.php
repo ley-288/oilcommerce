@@ -7,7 +7,7 @@
                     <h3>Edit Category
                         <a href="{{url('admin/category')}}" class="btn btn-primary btn-sm text-white float-end">
                             Back
-                        <a>
+                        </a>
                     </h3>
                 </div>
                 <div class="card-body">

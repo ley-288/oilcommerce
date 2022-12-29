@@ -12,7 +12,7 @@
     <!-- Styles -->
     <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
     @livewireStyles
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    {{--@vite(['resources/sass/app.scss', 'resources/js/app.js'])--}}
 </head>
 <body>
     <div id="app">
