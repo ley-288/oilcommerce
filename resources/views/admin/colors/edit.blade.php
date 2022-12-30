@@ -18,7 +18,7 @@
             <div class="card-body">
                 <form action="{{url('admin/colors/'.$color->id)}}" method="POST">
                     @csrf
-                    @method('PUT')
+                    @method('PUT');
                     <div class="mb-3">
                         <label>Color Name</label>
                         <input type="text" name="name" value="{{$color->name}}" class="form-control">
