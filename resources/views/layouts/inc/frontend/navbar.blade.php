@@ -18,8 +18,8 @@
                 <div class="col-md-5 my-auto">
                     <ul class="nav justify-content-end">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <i class="fa fa-shopping-cart"></i> Cart (0)
+                            <a class="nav-link" href="{{url('cart')}}">
+                                <i class="fa fa-shopping-cart"></i> Cart (<livewire:frontend.cart.cart-count/>)
                             </a>
                         </li>
                         <li class="nav-item">
