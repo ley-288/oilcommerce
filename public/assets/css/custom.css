@@ -230,6 +230,13 @@
 }
 /* Product View */
 
+.underline {
+    height: 4px;
+    width: 100px;
+    background-color: blue;
+    margin: 10px 0px;
+}
+
 /* Cart or Wishlist */
 .shopping-cart .cart-header {
     padding: 10px;
