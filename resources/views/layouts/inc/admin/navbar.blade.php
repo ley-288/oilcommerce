@@ -1,10 +1,10 @@
 <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
   <div class="navbar-brand-wrapper d-flex justify-content-center">
     <div class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100">
-      <a class="navbar-brand brand-logo" href="index.html">
+      <a class="navbar-brand brand-logo" href="{{url('/')}}">
           <img src="images/head-logo.png?v=1.1" alt="logo" style="width:150px;height:auto;"/>
       </a>
-      <a class="navbar-brand brand-logo-mini" href="index.html">
+      <a class="navbar-brand brand-logo-mini" href="{{url('/')}}">
         <img src="images/branches-blk.png" alt="logo" style="height:auto;"/>
       </a>
       <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">

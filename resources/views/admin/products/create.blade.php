@@ -12,6 +12,13 @@
                 </h3>
             </div>
             <div class="card-body">
+                @if($errors->any())
+                    <div class="alert alert-warning">
+                        @foreach($errors->all() as $error)
+                            <div>{{$error}}</div>
+                        @endforeach
+                    </div>
+                @endif
                 <form action="{{url('admin/products')}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -108,6 +115,12 @@
                                     <div class="mb-3">
                                         <label>Trending</label>
                                         <input type="checkbox" name="trending"/>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="mb-3">
+                                        <label>Featured</label>
+                                        <input type="checkbox" name="featured"/>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
