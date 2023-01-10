@@ -1,32 +1,45 @@
-<div class="main-navbar shadow-sm sticky-top">
+<div class="main-navbar sticky-top">
     <div class="top-navbar">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-2 my-auto d-none d-sm-none d-md-block d-lg-block">
+                <div class="col-md-6 my-auto d-none d-sm-none d-md-block d-lg-block">
                     <a class="navbar-brand brand-logo" href="{{url('/')}}">
-                        <img src="{{asset('admin/images/head-logo.png?v=1.1')}}" alt="logo" style="width:150px;height:auto;"/>
+                        <img src="{{asset('admin/images/head-logo.png?v=1.1')}}" alt="logo" width="350" style="height:auto;"/>
                     </a>
                 </div>
+                {{--
                 <div class="col-md-5 my-auto">
                     <form action="{{url('search')}}" method="get" role="search">
                         <div class="input-group">
                             <input type="search" name="search" value="{{Request::get('search')}}" placeholder="Search your product" class="form-control" />
-                            <button class="btn bg-white" type="submit">
+                            <button class="btn bg-white search-button" type="submit">
                                 <i class="fa fa-search"></i>
                             </button>
                         </div>
                     </form>
                 </div>
-                <div class="col-md-5 my-auto">
+                --}}
+                <div class="col-md-6 my-auto">
                     <ul class="nav justify-content-end">
                         <li class="nav-item">
+                            <a class="nav-link" href="{{url('collections')}}">
+                                <i class="fa fa-search"></i> Products
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="{{url('cart')}}">
-                                <i class="fa fa-shopping-cart"></i> Cart (<livewire:frontend.cart.cart-count/>)
+                                <div class="notif-count-flex">
+                                    <div><i class="fa fa-shopping-cart"></i></div>
+                                    <livewire:frontend.cart.cart-count/>
+                                </div>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{url('wishlist')}}">
-                                <i class="fa fa-heart"></i> Wishlist (<livewire:frontend.wishlist-count/>)
+                                <div class="notif-count-flex">
+                                    <div><i class="fa fa-heart"></i></div>
+                                    <livewire:frontend.wishlist-count/>
+                                </div>
                             </a>
                         </li>
                         @guest
@@ -46,10 +59,10 @@
                                     <i class="fa fa-user"></i> {{ Auth::user()->name }}
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="#"><i class="fa fa-user"></i> Profile</a></li>
-                                    <li><a class="dropdown-item" href="#"><i class="fa fa-list"></i> My Orders</a></li>
-                                    <li><a class="dropdown-item" href="#"><i class="fa fa-heart"></i> My Wishlist</a></li>
-                                    <li><a class="dropdown-item" href="#"><i class="fa fa-shopping-cart"></i> My Cart</a></li>
+                                    <li><a class="dropdown-item" href="{{url('profile')}}"><i class="fa fa-user"></i> Profile</a></li>
+                                    <li><a class="dropdown-item" href="{{url('orders')}}"><i class="fa fa-list"></i> My Orders</a></li>
+                                    <li><a class="dropdown-item" href="{{url('wishlist')}}"><i class="fa fa-heart"></i> My Wishlist</a></li>
+                                    <li><a class="dropdown-item" href="{{url('cart')}}"><i class="fa fa-shopping-cart"></i> My Cart</a></li>
                                     <li>
                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
@@ -77,12 +90,10 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 justify-content-center ">
+                    {{--
                     <li class="nav-item">
-                        <a class="nav-link" href="{{url('/')}}">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{url('/collections')}}">All Categories</a>
+                        <a class="nav-link" href="{{url('/collections')}}">Products</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{url('/new-arrivals')}}">New Arrivals</a>
@@ -90,6 +101,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{url('/featured-products')}}">Featured Products</a>
                     </li>
+                    --}}
                 </ul>
             </div>
         </div>

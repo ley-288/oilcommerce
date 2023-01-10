@@ -15,6 +15,8 @@
     <!-- End plugin css for this page -->
     <!-- inject:css -->
     <link rel="stylesheet" href="{{asset('admin/css/style.css')}}">
+    <!-- Custom file -->
+    <link href="{{ asset('assets/css/custom.css') }}" rel="stylesheet">
     <!-- endinject -->
     <link rel="shortcut icon" href="{{asset('admin/images/favicon.png')}}" />
     @livewireStyles

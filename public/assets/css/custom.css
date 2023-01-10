@@ -1,3 +1,7 @@
+a {
+    color: #00b3ff;
+}
+
 .carousel-item .custom-carousel-content {
     width: 50%;
     transform: translate(0%, -10%);
@@ -32,12 +36,15 @@
 
 /* Navbar Start */
 .main-navbar {
-    border-bottom: 1px solid #ccc;
+    border-bottom: 2px solid #f9f9f9;
 }
 .main-navbar .top-navbar {
     background-color: white;
     padding-top: 10px;
     padding-bottom: 10px;
+    //backdrop-filter: saturate(180%) blur(20px);
+    //-webkit-backdrop-filter: saturate(180%) blur(20px);
+    //-moz-backdrop-filter: saturate(180%) blur(20px);
 }
 .main-navbar .top-navbar .brand-name {
     color: #fff;
@@ -53,13 +60,12 @@
 }
 .main-navbar .top-navbar .dropdown-menu .dropdown-item {
     padding: 8px 16px;
-    border-bottom: 1px solid #ccc;
     font-size: 14px;
 }
 .main-navbar .top-navbar .dropdown-menu .dropdown-item i {
     width: 20px;
     text-align: center;
-    color: #2874f0;
+    color: #575757;
     font-size: 14px;
 }
 .main-navbar .navbar {
@@ -73,9 +79,12 @@
 }
 
 @media only screen and (max-width: 600px) {
+    .container-fluid {
+    }
     .main-navbar .top-navbar .nav-link {
-        font-size: 12px;
-        padding: 8px 10px;
+        display: none;
+        //font-size: 12px;
+        //padding: 8px 10px;
     }
 }
 /* Navbar End */
@@ -127,7 +136,6 @@
 .product-card .product-card-img {
     max-height: 260px;
     overflow: hidden;
-    border-bottom: 1px solid #ccc;
 }
 .product-card .product-card-img img {
     width: 100%;
@@ -233,7 +241,6 @@
 .underline {
     height: 4px;
     width: 100px;
-    background-color: blue;
     margin: 10px 0px;
 }
 
@@ -312,15 +319,20 @@
 
 .footer-area {
     padding: 40px 0px;
-    background-color: #2874f0;
-    color: #fff;
+    background-color: #f9f9f9;
+    color: #575757;
 }
 .footer-area a {
+    color: #575757;
     text-decoration: none;
+    font-size: 12px;
+}
+.footer-area p {
+    font-size: 12px;
 }
 .footer-area .footer-heading {
-    font-size: 24px;
-    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
 }
 .footer-area .footer-underline {
     height: 1px;
@@ -330,19 +342,72 @@
 }
 .copyright-area {
     padding: 14px 0px;
-    background-color: #262626;
+    background-color: #f9f9f9;
 }
 .copyright-area p {
     margin-bottom: 0px;
-    color: #fff;
+    color: #575757;
+    font-size: 12px;
 }
 .copyright-area .social-media {
     text-align: end;
 }
 .copyright-area .social-media a {
     margin: 0px 10px;
-    color: #fff;
+    color: #575757;
     width: 20px;
 }
 
 /* End Footer View */
+
+/* Leyton Custom */
+
+/* Admin Custom */
+
+.sidebar .nav-item {
+    border: none !important;
+}
+
+.main-panel {
+    overflow: auto;
+    height: 100vh;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* End Admin View */
+
+/* Site Custom */
+
+.search-button {
+    border: 1px solid #cdd4d9;
+    border-left: none;
+}
+
+.alertify-notifier .ajs-message {
+    border-radius: 5px !important;
+    border: none !important;
+    backdrop-filter: blur(20px) !important;
+    box-shadow: 0px 0px 20px 0px lightgrey !important;
+    text-shadow: none !important;
+}
+
+.notif-count-flex {
+    display: flex;
+}
+
+.notification-count {
+    background: #ff0076;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    font-size: 9px;
+    color: #fff;
+    width: 12px;
+    height: 12px;
+}
+
+/* End Admin View */

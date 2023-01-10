@@ -1,6 +1,7 @@
 <div>
     <div class="row">
         <div class="col-md-3">
+            {{--
             @if($category->brands)
                 <div class="card">
                     <div class="card-header"><h4>Brands</h4></div>
@@ -13,18 +14,19 @@
                     </div>
                 </div>
             @endif
-            <div class="card mt-3">
+            --}}
+            <div class="card">
                 <div class="card-header"><h4>Price</h4></div>
-                <div class="card-body">
-                    <label class="d-block">
-                        <input type="radio" name="priceSort" wire:model="priceInput" value="high-to-low"> High to Low
-                    </label>
-                    <label class="d-block">
-                        <input type="radio" name="priceSort" wire:model="priceInput" value="low-to-high"> Low to Hight
-                    </label>
+                    <div class="card-body">
+                        <label class="d-block">
+                            <input type="radio" name="priceSort" wire:model="priceInput" value="high-to-low"> High to Low
+                        </label>
+                        <label class="d-block">
+                            <input type="radio" name="priceSort" wire:model="priceInput" value="low-to-high"> Low to Hight
+                        </label>
+                    </div>
                 </div>
             </div>
-        </div>
         <div class="col-md-9">
             <div class="row">
                 @forelse($products as $productItem)

@@ -15,9 +15,15 @@ class CartCount extends Component
     public function checkCartCount()
     {
         if(Auth::check()){
-            return $this->cartCount = Cart::where('user_id', auth()->user()->id)->count();
+            $this->cartCount = Cart::where('user_id', auth()->user()->id)->count();
+            if($this->cartCount > 0){
+                return $this->cartCount;
+            }else{
+                $this->cartCount = '';
+                return $this->cartCount;
+            }
         } else {
-            return $this->cartCount = 0;
+            return $this->cartCount = '';
         }
     }
 
