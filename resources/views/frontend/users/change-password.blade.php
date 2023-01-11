@@ -18,9 +18,9 @@
                     @endforeach
                 </ul>
                 @endif
-                <div class="card shadow">
-                    <div class="card-header bg-primary">
-                        <h4 class="mb-0 text-white">Change Password
+                <div class="card">
+                    <div class="card-header bg-white" style="border-bottom:none;">
+                        <h4 class="mb-0">Change Password
                             <a href="{{url('/profile')}}" class="btn btn-danger float-end">Back</a>
                         </h4>
                     </div>
@@ -40,7 +40,6 @@
                                 <input type="password" name="password_confirmation" class="form-control" />
                             </div>
                             <div class="mb-3 text-end">
-                                <hr>
                                 <button type="submit" class="btn btn-primary">Update Password</button>
                             </div>
                         </form>

@@ -10,7 +10,7 @@
 @endsection
 @section('content')
 
-<div class="py-3 py-md-5 bg-light">
+<div class="py-3 py-md-5 bg-white">
     <div class="container">
         <div class="row">
             <div class="col-md-12">

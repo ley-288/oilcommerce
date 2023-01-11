@@ -32,7 +32,7 @@
                     </div>
                     <div class="mb-2">
                         <a href="" relatedProductItem>
-                            <i class="fa fa-phone"></i> {{$appSetting->phon1 ?? 'phone'}}
+                            <i class="fa fa-phone"></i> {{$appSetting->phone1 ?? 'phone'}}
                         </a>
                     </div>
                     <div class="mb-2">

@@ -2,7 +2,6 @@
     <div class="py-3 py-md-5">
         <div class="container">
             <h3>My Wishlist</h3>
-            <hr>
             <div class="row">
                 <div class="col-md-12">
                     <div class="shopping-cart">
@@ -34,7 +33,6 @@
                                         <div class="col-md-2 my-auto">
                                             <label class="price">${{$wishlistItem->product->selling_price}} </label>
                                         </div>
-
                                         <div class="col-md-4 col-12 my-auto" style="display: flex;justify-content: flex-end;">
                                             <div class="remove">
                                                 <button type="button" wire:click="removeWishlistItem({{$wishlistItem->id}})" class="btn btn-danger btn-sm">

@@ -103,7 +103,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h4>New<a href="{{url('/new-arrials')}}" class="btn btn-warning float-end">View More</a></h4>
+                <h4>New<a href="{{url('/new-arrivals')}}" class="btn btn-warning float-end">View More</a></h4>
                 <div class="underline mb-4"></div>
             </div>
             @if($newArrivalProducts)

@@ -2,11 +2,9 @@
 <div class="py-3 py-md-5">
         <div class="container">
         <h4>My Cart</h4>
-        <hr>
             <div class="row">
                 <div class="col-md-12">
                     <div class="shopping-cart">
-
                         <div class="cart-header d-none d-sm-none d-mb-block d-lg-block">
                             <div class="row">
                                 <div class="col-md-6">
@@ -53,9 +51,9 @@
                                     <div class="col-md-2 col-7 my-auto">
                                         <div class="quantity">
                                             <div class="input-group">
-                                                <button type="button" wire:loading.attr="disabled" wire:click="decrementQuantity({{$cartItem->id}})" class="btn btn1"><i class="fa fa-minus"></i></button>
-                                                <input type="text" value="{{$cartItem->quantity}}" class="input-quantity" readonly/>
-                                                <button type="button" wire:loading.attr="disabled" wire:click="incrementQuantity({{$cartItem->id}})" class="btn btn1"><i class="fa fa-plus"></i></button>
+                                                <button type="button" wire:loading.attr="disabled" wire:click="decrementQuantity({{$cartItem->id}})" class="btn btn1" style="border-radius:100%;"><i class="fa fa-minus"></i></button>
+                                                <input type="text" value="{{$cartItem->quantity}}" class="input-quantity" readonly style="border-radius:25px;"/>
+                                                <button type="button" wire:loading.attr="disabled" wire:click="incrementQuantity({{$cartItem->id}})" class="btn btn1" style="border-radius:100%;"><i class="fa fa-plus"></i></button>
                                             </div>
                                         </div>
                                     </div>
@@ -84,18 +82,19 @@
                     </div>
                 </div>
             </div>
+            <hr>
             <div class="row">
                 <div class="col-md-8 my-md-auto mt-3">
                     <h4>
-                        Get the best deals and offers <a href="{{url('/collections')}}">shop now</a>
+                        Forget something? <a href="{{url('/collections')}}">shop now</a>
                     </h4>
                 </div>
                 <div class="col-md-4 mt-3">
-                    <div class="shadow-sm bg-white p-3">
+                    <div class="bg-white p-3">
                         <h4>Total
                             <span class="float-end">${{$totalPrice}}</span>
                         </h4>
-                        <hr>
+                        <br>
                         <a href="{{url('/checkout')}}" class="btn btn-warning w-100">Checkout</a>
                     </div>
                 </div>

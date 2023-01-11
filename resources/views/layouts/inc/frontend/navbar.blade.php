@@ -23,7 +23,7 @@
                     <ul class="nav justify-content-end">
                         <li class="nav-item">
                             <a class="nav-link" href="{{url('collections')}}">
-                                <i class="fa fa-search"></i> Products
+                                <i class="fa fa-search"></i>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -56,18 +56,18 @@
                         @else
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <i class="fa fa-user"></i> {{ Auth::user()->name }}
+                                    {{ Auth::user()->name }}
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="{{url('profile')}}"><i class="fa fa-user"></i> Profile</a></li>
-                                    <li><a class="dropdown-item" href="{{url('orders')}}"><i class="fa fa-list"></i> My Orders</a></li>
-                                    <li><a class="dropdown-item" href="{{url('wishlist')}}"><i class="fa fa-heart"></i> My Wishlist</a></li>
-                                    <li><a class="dropdown-item" href="{{url('cart')}}"><i class="fa fa-shopping-cart"></i> My Cart</a></li>
+                                    <li><a class="dropdown-item" href="{{url('profile')}}"> Profile</a></li>
+                                    <li><a class="dropdown-item" href="{{url('orders')}}"> My Orders</a></li>
+                                    <li><a class="dropdown-item" href="{{url('wishlist')}}"> My Wishlist</a></li>
+                                    <li><a class="dropdown-item" href="{{url('cart')}}"> My Cart</a></li>
                                     <li>
                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                             document.getElementById('logout-form').submit();">
-                                            <i class="fa fa-sign-out"></i>{{ __('Logout') }}
+                                            {{ __('Logout') }}
                                         </a>
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                             @csrf

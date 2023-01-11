@@ -15,8 +15,8 @@
                 </div>
             @endif
             --}}
-            <div class="card">
-                <div class="card-header"><h4>Price</h4></div>
+            <div class="card" style="border-radius:0px;">
+                <div class="card-header bg-white" style="border-bottom:none;"><h4>Order by</h4></div>
                     <div class="card-body">
                         <label class="d-block">
                             <input type="radio" name="priceSort" wire:model="priceInput" value="high-to-low"> High to Low

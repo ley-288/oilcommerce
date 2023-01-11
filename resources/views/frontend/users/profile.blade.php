@@ -23,9 +23,9 @@
                         @endforeach
                     </ul>
                 @endif
-                <div class="card shadow">
-                    <div class="card-header bg-primary">
-                        <h4 class="mb-0 text-white">Details</h4>
+                <div class="card">
+                    <div class="card-header bg-white" style="border-bottom:none;">
+                        <h4 class="mb-0">Details</h4>
                     </div>
                     <div class="card-body">
                         <form action="{{url('/profile')}}" method="POST">
@@ -61,8 +61,8 @@
                                         <textarea name="address" class="form-control" rows="3">{{Auth::user()->userDetail->address ?? ''}}</textarea>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <button type="submit" class="btn btn-primary">Save</button>
+                                <div class="col-md-12">
+                                    <button type="submit" class="btn btn-primary float-end">Save</button>
                                 </div>
                             </div>
                         </form>
