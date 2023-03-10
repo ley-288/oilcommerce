@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\ProductImage;
 use App\Models\ProductColor;
+use App\Models\ProductPrargraph;
 use App\Models\Category;
 
 class Product extends Model
@@ -16,11 +17,13 @@ class Product extends Model
 
     protected $fillable = [
         'category_id',
-        'name',
+        'headline',
+        'title',
+        'author',
         'slug',
         'brand',
-        'small_description',
-        'description',
+        'summary',
+        'content',
         'original_price',
         'selling_price',
         'quantity',
@@ -45,5 +48,10 @@ class Product extends Model
     public function productColors()
     {
         return $this->hasMany(ProductColor::class, 'product_id', 'id');
+    }
+
+    public function productParagraphs()
+    {
+        return $this->hasMany(ProductParagraph::class, 'product_id', 'id');
     }
 }

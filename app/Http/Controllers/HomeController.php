@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
+    protected $categoryList;
+
     /**
      * Create a new controller instance.
      *

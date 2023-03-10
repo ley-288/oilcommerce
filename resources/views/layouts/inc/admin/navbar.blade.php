@@ -2,7 +2,7 @@
   <div class="navbar-brand-wrapper d-flex justify-content-center">
     <div class="navbar-brand-inner-wrapper d-flex justify-content-flex-start align-items-center w-100">
       <a class="navbar-brand brand-logo" href="{{url('/')}}">
-          <img src="images/head-logo.png?v=1.1" alt="logo" style="width:180px;height:auto;"/>
+          <p class="headline-spot racing-green color-green headline-font">Racing Green</p>
       </a>
       <a class="navbar-brand brand-logo-mini" href="{{url('/')}}">
         <img src="images/branches-blk.png" alt="logo" style="height:auto;"/>

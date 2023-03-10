@@ -9,9 +9,9 @@
         @endif
         <div class="card">
             <div class="card-header">
-                <h3>Products
-                    <a href="{{url('admin/products/create')}}" class="btn btn-primary btn-sm text-white float-end">
-                        Add Products
+                <h3>Articles
+                    <a href="{{url('admin/articles/create')}}" class="btn btn-primary btn-sm text-white float-end">
+                        Add Article
                     </a>
                 </h3>
             </div>
@@ -21,10 +21,8 @@
                         <tr>
                             <th>ID</th>
                             <th>Category</th>
-                            <th>Product</th>
-                            <th>Price</th>
-                            <th>Quantity</th>
-                            <th>Status</th>
+                            <th>Title</th>
+                            <th>Summary</th>
                             <th>Active</th>
                         </tr>
                     </thead>
@@ -39,19 +37,17 @@
                                         No Category
                                     @endif
                                 </td>
-                                <td>{{$product->id}}</td>
-                                <td>{{$product->name}}</td>
-                                <td>{{$product->selling_price}}</td>
-                                <td>{{$product->quantity}}</td>
-                                <td>{{$product->status == '1' ? 'Hidden' : 'Visible'}}</td>
+                                <td>{{$product->title}}</td>
+                                <td>{{$product->summary}}</td>
+                                <td>{{$product->status == '1' ? 'Unpublished' : 'Published'}}</td>
                                 <td>
-                                    <a href="{{ url('admin/products/'.$product->id.'/edit') }}" class="btn btn-sm btn-success text-white">Edit</a>
-                                    <a href="{{ url('admin/products/'.$product->id.'/delete') }}" onclick="return confirm('Are you sure?')" class="btn btn-sm btn-danger text-white">Delete</a>
+                                    <a href="{{ url('admin/articles/'.$product->id.'/edit') }}" class="btn btn-sm btn-success text-white">Edit</a>
+                                    <a href="{{ url('admin/articles/'.$product->id.'/delete') }}" onclick="return confirm('Are you sure?')" class="btn btn-sm btn-danger text-white">Delete</a>
                                 </td>
                             </tr>
                         @empty
                             <tr>
-                                <td colspan="7">No Products Available</td>
+                                <td colspan="7">No Articles Available</td>
                             </tr>
                         @endforelse
                     </tbody>

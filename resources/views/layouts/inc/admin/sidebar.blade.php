@@ -32,16 +32,16 @@
         </ul>
       </div>
     </li>
-    <li class="nav-item {{Request::is('admin/products*') ? 'active' : ''}}">
-      <a class="nav-link" data-bs-toggle="collapse" href="#prod" aria-expanded="{{Request::is('admin/products*') ? 'true' : 'false'}}" aria-controls="prod">
+    <li class="nav-item {{Request::is('admin/articles*') ? 'active' : ''}}">
+      <a class="nav-link" data-bs-toggle="collapse" href="#prod" aria-expanded="{{Request::is('admin/articles*') ? 'true' : 'false'}}" aria-controls="prod">
         <i class="mdi mdi-plus-circle menu-icon"></i>
-        <span class="menu-title">Products</span>
+        <span class="menu-title">Articles</span>
         <i class="menu-arrow"></i>
       </a>
-      <div class="collapse {{Request::is('admin/products*') ? 'show' : ''}}" id="prod">
+      <div class="collapse {{Request::is('admin/articles*') ? 'show' : ''}}" id="prod">
         <ul class="nav flex-column sub-menu">
-        <li class="nav-item"> <a class="nav-link {{Request::is('admin/products') || Request::is('admin/products/*/edit') ? 'active' : ''}}" href="{{url('admin/products')}}"> View Products </a></li>
-          <li class="nav-item"> <a class="nav-link {{Request::is('admin/products/create') ? 'active' : ''}}" href="{{url('admin/products/create')}}"> Add Product </a></li>
+        <li class="nav-item"> <a class="nav-link {{Request::is('admin/articles') || Request::is('admin/articles/*/edit') ? 'active' : ''}}" href="{{url('admin/articles')}}"> View Articles </a></li>
+          <li class="nav-item"> <a class="nav-link {{Request::is('admin/articles/create') ? 'active' : ''}}" href="{{url('admin/articles/create')}}"> Add Article </a></li>
         </ul>
       </div>
     </li>

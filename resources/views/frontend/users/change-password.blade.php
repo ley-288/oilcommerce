@@ -20,7 +20,7 @@
                 @endif
                 <div class="card">
                     <div class="card-header bg-white" style="border-bottom:none;">
-                        <h4 class="mb-0">Change Password
+                        <h4 class="col-md-12 d-flex justify-content-center">
                             <a href="{{url('/profile')}}" class="btn btn-danger float-end">Back</a>
                         </h4>
                     </div>
@@ -39,7 +39,7 @@
                                 <label>Confirm Password</label>
                                 <input type="password" name="password_confirmation" class="form-control" />
                             </div>
-                            <div class="mb-3 text-end">
+                            <div class="col-md-12 d-flex justify-content-center mt-5">
                                 <button type="submit" class="btn btn-primary">Update Password</button>
                             </div>
                         </form>

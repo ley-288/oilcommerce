@@ -28,7 +28,15 @@ class ProductFormRequest extends FormRequest
                 'required',
                 'integer'
             ],
-            'name' => [
+            'headline' => [
+                'required',
+                'string'
+            ],
+            'title' => [
+                'required',
+                'string'
+            ],
+            'author' => [
                 'required',
                 'string'
             ],
@@ -42,26 +50,30 @@ class ProductFormRequest extends FormRequest
                 'string',
                 'max:255'
             ],
-            'small_description' => [
+            'summary' => [
                 'required',
                 'string'
             ],
-            'description' => [
-                'required',
+
+            /*
+            'content' => [
+                'nullable',
                 'string'
             ],
             'original_price' => [
-                'required',
+                //'required',
                 'integer'
             ],
             'selling_price' => [
-                'required',
+                //'required',
                 'integer'
             ],
             'quantity' => [
-                'required',
+                //'required',
                 'integer'
             ],
+            */
+
             'trending' => [
                 'nullable',
             ],

@@ -19,7 +19,7 @@ class View extends Component
             {
                 session()->flash('message', 'Already Added to Wishlist');
                 $this->dispatchBrowserEvent('message', [
-                    'text' => 'Already Added to Wishlist',
+                    'text' => 'Already Added to Favourites',
                     'type' => 'warning',
                     'status' => 409
                 ]);
@@ -34,7 +34,7 @@ class View extends Component
                 $this->emit('wishlistAddedUpdated');
                 session()->flash('message', 'Added to Wishlist');
                 $this->dispatchBrowserEvent('message', [
-                    'text' => 'Added to Wishlist',
+                    'text' => 'Added to Favourites',
                     'type' => 'success',
                     'status' => 200
                 ]);

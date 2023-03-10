@@ -30,7 +30,7 @@ class Category extends Model
 
     public function relatedProducts()
     {
-        return $this->hasMany(Product::class, 'category_id', 'id')->latest()->take(4);
+        return $this->hasMany(Product::class, 'category_id', 'id')->where('category_id', '!=', 'id')->inRandomOrder()->take(1);
     }
 
     public function brands()

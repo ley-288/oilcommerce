@@ -29,7 +29,7 @@
                             <div class="cart-item">
                                 <div class="row">
                                     <div class="col-md-6 my-auto">
-                                        <a href="{{url('collections/'.$cartItem->product->category->slug.'/'.$cartItem->product->slug)}}">
+                                        <a href="{{url('article/'.$cartItem->product->category->slug.'/'.$cartItem->product->slug)}}">
                                             <label class="product-name">
                                                 @if($cartItem->product->productImages)
                                                     <img src="{{asset($cartItem->product->productImages[0]->image)}}" style="width: 50px; height: 50px" alt="">
@@ -86,7 +86,7 @@
             <div class="row">
                 <div class="col-md-8 my-md-auto mt-3">
                     <h4>
-                        Forget something? <a href="{{url('/collections')}}">shop now</a>
+                        Forget something? <a href="{{url('/article')}}">shop now</a>
                     </h4>
                 </div>
                 <div class="col-md-4 mt-3">

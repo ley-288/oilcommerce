@@ -5,8 +5,8 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-header">
-                <h3>Add Product
-                    <a href="{{url('admin/products')}}" class="btn btn-primary btn-sm text-white float-end">
+                <h3>Add Article
+                    <a href="{{url('admin/articles')}}" class="btn btn-primary btn-sm text-white float-end">
                         Back
                     </a>
                 </h3>
@@ -19,11 +19,14 @@
                         @endforeach
                     </div>
                 @endif
-                <form action="{{url('admin/products')}}" method="POST" enctype="multipart/form-data">
+                <form action="{{url('admin/articles')}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                         <li class="nav-item" role="presentation">
                             <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Home</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="content" data-bs-toggle="tab" data-bs-target="#content-pane" type="button" role="tab" aria-controls="content-pane" aria-selected="false">Content</button>
                         </li>
                         <li class="nav-item" role="presentation">
                             <button class="nav-link" id="seotag" data-bs-toggle="tab" data-bs-target="#seotag-pane" type="button" role="tab" aria-controls="seotag-pane" aria-selected="false">SEO Tags</button>
@@ -33,9 +36,6 @@
                         </li>
                         <li class="nav-item" role="presentation">
                             <button class="nav-link" id="images" data-bs-toggle="tab" data-bs-target="#images-pane" type="button" role="tab" aria-controls="images-pane" aria-selected="false">Images</button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="color" data-bs-toggle="tab" data-bs-target="#color-pane" type="button" role="tab" aria-controls="color-pane" aria-selected="false">Color</button>
                         </li>
                     </ul>
                     <div class="tab-content" id="myTabContent">
@@ -51,8 +51,16 @@
                                 </select>
                             </div>
                             <div class="mb-3">
-                                <label>Name</label>
-                                <input type="text" name="name" class="form-control"/>
+                                <label>Headline</label>
+                                <input type="text" name="headline" class="form-control"/>
+                            </div>
+                            <div class="mb-3">
+                                <label>Title</label>
+                                <input type="text" name="title" class="form-control"/>
+                            </div>
+                            <div class="mb-3">
+                                <label>Author</label>
+                                <input type="text" name="author" class="form-control"/>
                             </div>
                             <div class="mb-3">
                                 <label>Slug</label>
@@ -69,13 +77,15 @@
                                 </select>
                             </div>
                             <div class="mb-3">
-                                <label>Small Description</label>
-                                <textarea name="small_description" class="form-control" rows="4"></textarea>
+                                <label>Summary</label>
+                                <textarea name="summary" class="form-control" rows="4"></textarea>
                             </div>
+                            {{--
                             <div class="mb-3">
-                                <label>Description</label>
-                                <textarea name="description" class="form-control" rows="4"></textarea>
+                                <label>Article</label>
+                                <textarea name="content" class="form-control" rows="4"></textarea>
                             </div>
+                            --}}
                         </div>
                         <div class="tab-pane fade border p-3" id="seotag-pane" role="tabpanel" aria-labelledby="seotag" tabindex="0">
                             <div class="mb-3">
@@ -93,6 +103,7 @@
                         </div>
                         <div class="tab-pane fade border p-3" id="details-pane" role="tabpanel" aria-labelledby="details" tabindex="0">
                             <div class="row">
+                                {{--
                                 <div class="col-md-4">
                                     <div class="mb-3">
                                         <label>Original Price</label>
@@ -111,6 +122,7 @@
                                         <input type="number" name="quantity" class="form-control"/>
                                     </div>
                                 </div>
+                                --}}
                                 <div class="col-md-4">
                                     <div class="mb-3">
                                         <label>Trending</label>
@@ -125,8 +137,8 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="mb-3">
-                                        <label>Status</label>
-                                        <input type="checkbox" name="status"/>
+                                        <label>Unpublished</label>
+                                        <input type="checkbox" name="status" checked/>
                                     </div>
                                 </div>
                             </div>
@@ -137,22 +149,28 @@
                                 <input type="file" name="image[]" multiple class="form-control"/>
                             </div>
                         </div>
-                        <div class="tab-pane fade border p-3" id="color-pane" role="tabpanel" aria-labelledby="color" tabindex="0">
+                        <div class="tab-pane fade border p-3" id="content-pane" role="tabpanel" aria-labelledby="content" tabindex="0">
                             <div class="mb-3">
-                                <label>Color</label>
+                                <label>Paragraphs</label>
                                 <div class="row">
-                                    @forelse($colors as $coloritem)
-                                        <div class="col-md-3">
+                                    @forelse($paragraphs as $paragraph)
+                                        <div class="">
                                             <div class="p-2 border mb-3">
-                                                Color: <input type="checkbox" name="colors[{{$coloritem->id}}]" value="{{$coloritem->id}}"/>
-                                                {{$coloritem->name}}
+                                                Add: <input type="checkbox" name="paragraphs[{{$paragraph->id}}]" value="{{$paragraph->id}}"/>
                                                 </br>
-                                                Quantity: <input type="number" name="colorquantity[{{$coloritem->id}}]" style="width:70px; border:1px solid;">
+                                                <div class="mb-3">
+                                                    <label>Subheader:</label>
+                                                    <textarea name="paragrpahsub[{{$paragraph->id}}" class="form-control" rows="4"></textarea>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label>Content:</label>
+                                                    <textarea name="paragrpahcon[{{$paragraph->id}}" class="form-control" rows="4"></textarea>
+                                                </div>
                                             </div>
                                         </div>
                                     @empty
                                         <div class="col-md-12">
-                                            <h3>No Colors Found</h3>
+                                            <h3>No Paragraph Found</h3>
                                         </div>
                                     @endforelse
                                 </div>

@@ -2,44 +2,63 @@
     <div class="footer-area">
         <div class="container">
             <div class="row">
+                <div class="col-md-12">
+                    <form action="{{url('search')}}" method="get" role="search">
+                        <div class="input-group">
+                            <input type="search" name="search" value="{{Request::get('search')}}" placeholder="Search Racing Green Articles.." class="form-control" />
+                            <button class="btn bg-white search-button" type="submit">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                </br>
+                </br></br></br>
                 <div class="col-md-3">
-                    <h4 class="footer-heading">{{$appSetting->website_name ?? 'Oil'}}</h4>
+                    <h4 class="footer-heading racing-green">Racing Green Magazine</h4>
                 </div>
                 <div class="col-md-3">
                     <h4 class="footer-heading">Quick Links</h4>
                     <div class="mb-2"><a href="{{url('/')}}" relatedProductItem>Home</a></div>
+                    <div class="mb-2"><a href="{{url('/profile')}}" relatedProductItem>Profile</a></div>
                     <div class="mb-2"><a href="{{url('/about-us')}}" relatedProductItem>About Us</a></div>
-                    <div class="mb-2"><a href="{{url('/contact-us')}}" relatedProductItem>Contact Us</a></div>
-                    {{--
-                    <div class="mb-2"><a href="{{url('/blogs')}}" relatedProductItem>Blogs</a></div>
-                    <div class="mb-2"><a href="" relatedProductItem>Sitemaps</a></div>
-                    --}}
+                    <div class="mb-2"><a href="{{url('/about-us')}}" relatedProductItem>Contact Us</a></div>
+                    <div class="mb-2"><a href="{{url('/about-us')}}" relatedProductItem>Contribute</a></div>
+                    <div class="mb-2"><a href="{{url('/favourites')}}" relatedProductItem>Favourites</a></div>
+                    <div class="mb-2"><a href="{{url('/brand-directory')}}" relatedProductItem>Directory</a></div>
                 </div>
                 <div class="col-md-3">
-                    <h4 class="footer-heading">Shop Now</h4>
-                    <div class="mb-2"><a href="{{url('/collections')}}" relatedProductItem>Collections</a></div>
-                    <div class="mb-2"><a href="{{url('/')}}" relatedProductItem>Trending Products</a></div>
-                    <div class="mb-2"><a href="{{url('/new-arrivals')}}" relatedProductItem>New Arrivals Products</a></div>
-                    <div class="mb-2"><a href="{{url('/featured-products')}}" relatedProductItem>Featured Products</a></div>
-                    <div class="mb-2"><a href="{{url('/cart')}}" relatedProductItem>Cart</a></div>
+                    <a href="{{url('/article')}}" relatedProductItem><h4 class="footer-heading">Articles</h4></a>
+                    <div class="mb-2"><a href="{{url('/latest')}}" relatedProductItem>Latest Articles</a></div>
+                    @foreach($categoryList as $item)
+                        <div class="mb-2" id="{{$item->slug}}" data-src="{{asset($item->image)}}">
+                            <a href="{{url('/article/'.$item->slug)}}">
+                                {{$item->name}}
+                            </a>
+                        </div>
+                    @endforeach
                 </div>
                 <div class="col-md-3">
                     <h4 class="footer-heading">Reach Us</h4>
                     <div class="mb-2">
-                        <p>
-                            <i class="fa fa-map-marker"></i> {{$appSetting->address ?? 'address'}}
+                        <p style="margin-bottom:0;">
+                            {{$appSetting->address ?? 'address'}}
                         </p>
                     </div>
                     <div class="mb-2">
-                        <a href="" relatedProductItem>
-                            <i class="fa fa-phone"></i> {{$appSetting->phone1 ?? 'phone'}}
+                        <a href="mailto:racinggreenmagazine@gmail.com" relatedProductItem>
+                            {{$appSetting->email1 ?? 'email'}}
                         </a>
                     </div>
-                    <div class="mb-2">
-                        <a href="" relatedProductItem>
-                            <i class="fa fa-envelope"></i> {{$appSetting->email1 ?? 'email'}}
-                        </a>
-                    </div>
+                    @if(Auth::user())
+                        @if(Auth::user()->role_as == '1')
+                            <div class="mb-2">
+                                <a href="{{url('admin/dashboard')}}" relatedProductItem>
+                                    Admin
+                                </a>
+                            </div>
+                        @endif
+                    @endif
                 </div>
             </div>
         </div>
@@ -48,7 +67,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8">
-                    <p class=""> &copy; 2023 - {{$appSetting->website_name ?? 'Oil'}} All rights reserved.</p>
+                    <p class=""> &copy; 2023 - {{$appSetting->website_name ?? 'Racing Green'}}. All rights reserved.</p>
                 </div>
                 <div class="col-md-4">
                     <div class="social-media">
@@ -61,10 +80,22 @@
                         @if($appSetting->instagram)
                             <a href="{{$appSetting->instagram}}" target="_blank"><i class="fa fa-instagram"></i></a>
                         @endif
+                        {{--
                         @if($appSetting->youtube)
                             <a href="{{$appSetting->youtube}}" target="_blank"><i class="fa fa-youtube"></i></a>
                         @endif
+                        --}}
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copyright-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <a href="https://www.jiant.io" target="_blank" style="display:flex;align-items: baseline;">
+                    <p>Powered by </p><p class="jiant" style="margin-left:5px;"> JIANT</p></a>
                 </div>
             </div>
         </div>

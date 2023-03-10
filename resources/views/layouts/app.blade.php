@@ -8,7 +8,23 @@
     <title>@yield('title')</title>
     <meta name="description" content="@yield('meta_description')">
     <meta name="keywords" content="@yield('meta_keyword')">
-    <meta name="author" content="Casa Carlucci">
+    <meta name="author" content="Racing Green">
+    <meta name="theme-color" content="white"/>
+    <!-- Meta Images -->
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image" content="#">
+    <meta property="og:image:width" content="500"/>
+    <meta property="og:image:height" content="500"/>
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.racinggreenmagazine.com"/>
+    <meta property="og:title" content="Racing Green Magazine">
+    <meta property="og:description" content="Classic Motor Racing and Lifestyle">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="https://www.racinggreenmagazine.com">
+    <meta name="twitter:creator" content="Racing Green Magazine">
+    <meta name="twitter:title" content="Classic Motor Racing and Lifestyle">
+    <meta name="twitter:description" content="Classic Motor Racing and Lifestyle">
+    <meta name="twitter:image" content="#">
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
@@ -50,6 +66,7 @@
     </script>
     <script src="{{ asset('assets/js/owl.carousel.min.js') }}"></script>
     <script src="{{ asset('assets/exzoom/jquery.exzoom.js') }}"></script>
+    <script src="{{ asset('assets/js/custom.js') }}"></script>
     @yield('script')
     @livewireScripts
     @stack('scripts')

@@ -3,16 +3,19 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Models\User;
+
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Category;
 
 class UserController extends Controller
 {
     public function index()
     {
-        return view('frontend.users.profile');
+        $categoryList = Category::where('status', 0)->get();
+        return view('frontend.users.profile', compact('categoryList'));
     }
 
     public function updateUserDetails(Request $request)
@@ -45,7 +48,8 @@ class UserController extends Controller
 
     public function passwordCreate()
     {
-        return view('frontend.users.change-password');
+        $categoryList = Category::where('status', 0)->get();
+        return view('frontend.users.change-password', compact('categoryList'));
     }
 
     public function changePassword(Request $request)

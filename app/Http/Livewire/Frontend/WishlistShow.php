@@ -12,7 +12,7 @@ class WishlistShow extends Component
         Wishlist::where('user_id', auth()->user()->id)->where('id', $wishlistId)->delete();
         $this->emit('wishlistAddedUpdated');
         $this->dispatchBrowserEvent('message', [
-            'text' => 'Removed from Wishlist',
+            'text' => 'Removed from Favourites',
             'type' => 'success',
             'status' => 200
         ]);
@@ -22,7 +22,7 @@ class WishlistShow extends Component
     {
         $wishlist = Wishlist::where('user_id', auth()->user()->id)->get();
         return view('livewire.frontend.wishlist-show', [
-            'wishlist' => $wishlist
+            'wishlist' => $wishlist,
         ]);
     }
 }
