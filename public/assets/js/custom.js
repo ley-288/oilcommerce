@@ -2,6 +2,8 @@
 const dropdown = document.querySelector("#navbarDropdown");
 const closure = document.querySelector("#closure-icon");
 const navtog = document.querySelector(".navbar-toggler");
+const sercBtn = document.querySelector(".search-btn");
+const closeSerc = document.querySelector(".close-search-overlay");
 
 // links
 const hoverlink = document.querySelectorAll(".link-hover");
@@ -17,6 +19,7 @@ const navfont = document.querySelector(".headline-spot");
 const navfontm = document.querySelector(".m-headline");
 const mobilenav = document.querySelector("nav");
 const mobilebars = document.querySelector(".mobile-bars");
+const sercOverlay = document.querySelector(".search-overlay");
 
 // functions
 dropdown.addEventListener("click", function (e) {
@@ -42,6 +45,14 @@ navtog.addEventListener("click", function (e) {
     mobilebars.classList.toggle("black-bars");
     mobilebars.classList.toggle("fa-bars");
     mobilebars.classList.toggle("fa-times-circle");
+});
+
+sercBtn.addEventListener("click", function (e) {
+    sercOverlay.classList.toggle("overlay-hide");
+});
+
+closeSerc.addEventListener("click", function (e) {
+    sercOverlay.classList.toggle("overlay-hide");
 });
 
 hoverlink.forEach(function (elem) {

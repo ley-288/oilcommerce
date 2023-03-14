@@ -14,7 +14,7 @@
 }
 
 .caro-hero {
-    height: 60vh;
+    height: 65vh;
     width: 100vw;
     object-fit: cover;
 }
@@ -64,6 +64,16 @@ main {
     font-size: 1.2rem;
 }
 
+/* START BOOTSTRAP BUTTON COLOUR */
+
+.btn-warning {
+}
+
+.btn-danger {
+}
+
+/* END BOOTSTRAP BUTTON COLOUR */
+
 .card {
     border: none;
 }
@@ -101,7 +111,7 @@ main {
 .custom-carousel-content .btn-slider {
     border: none;
     box-shadow: 0px 0px 10px 0px black;
-    background: #ff00ce;
+    background-image: linear-gradient(45deg, #ff0000, #fff200);
     border-radius: 25px;
     padding: 8px 26px;
     color: #fff;
@@ -261,6 +271,23 @@ main {
     justify-content: center;
 }
 
+.search-overlay {
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(20px) saturate(180%) brightness(0.3);
+    -webkit-backdrop-filter: blur(20px) saturate(180%) brightness(0.3);
+    z-index: 2000;
+}
+
+.search-padding {
+    padding: 0vw 20vw;
+}
+
 .mobile-nav-lower {
     text-align: center;
     color: white;
@@ -299,30 +326,22 @@ main {
     background: #1ce8c6;
     border-radius: 25px;
     color: black;
+    padding: 10px;
 }
 
 .fav-button {
-    background-image: radial-gradient(
-            circle farthest-corner at 35% 90%,
-            #82e1ff,
-            #0000 50%
-        ),
-        radial-gradient(circle farthest-corner at 0 140%, #ff90fe, #0000 50%),
-        radial-gradient(ellipse farthest-corner at 0 -25%, #ffadeb, #0000 50%),
-        radial-gradient(ellipse farthest-corner at 20% -50%, #fcd4d4, #0000 50%),
-        radial-gradient(ellipse farthest-corner at 100% 0, #ffd6b7, #0000 50%),
-        radial-gradient(ellipse farthest-corner at 60% -20%, #ffffa9, #0000 50%),
-        radial-gradient(ellipse farthest-corner at 100% 100%, #ffffa9, #0000),
-        linear-gradient(
-            #ffd6b7,
-            #fcd4d4 30%,
-            #ffadeb 50%,
-            #ff90fe 70%,
-            #82e1ff 100%
-        );
+    background: #ff00ce;
     border-radius: 25px;
     color: white !important;
-    padding: 5px;
+    padding: 10px;
+}
+
+.search-btn {
+    background: black;
+    border-radius: 25px;
+    color: white !important;
+    padding: 10px;
+    border: 1px solid white;
 }
 
 /* Navbar End */
@@ -944,10 +963,15 @@ a {
 
 /* Site Custom */
 
+.search-bar {
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+}
+
 .search-button {
     border: 1px solid #cdd4d9;
-    border-top-right-radius: 5px !important;
-    border-bottom-right-radius: 5px !important;
+    border-top-right-radius: 25px !important;
+    border-bottom-right-radius: 25px !important;
     border-left: none;
 }
 

@@ -5,7 +5,7 @@
                 <div class="col-md-8 my-auto">
                     <a class="navbar-brand brand-logo" href="{{url('/')}}">
                         <ul class="nav justify-content-start flexed-nav">
-                            <p class="headline-spot racing-green color-green headline-font">Racing Green Magazine</p>
+                            <p class="headline-spot racing-green color-green headline-font">RacingGreenMagazine</p>
                         </ul>
                     </a>
                 </div>
@@ -69,12 +69,12 @@
             <div class="d-flex align-items-center">
                 <div class="d-lg-none sub-fav-bar">
                     @guest
-                        <a href="{{ route('register') }}" class="subscribe-button" style="padding:5px;">
+                        <a href="{{ route('register') }}" class="subscribe-button">
                             Subscribe
                             <i class="fa fa-rss"></i>
                         </a>
                     @else
-                        <a href="{{ url('/favourites') }}" class="fav-button" style="padding:5px;">
+                        <a href="{{ url('/favourites') }}" class="fav-button">
                             Favourites
                             <i class="fa fa-heart"></i>
                         </a>

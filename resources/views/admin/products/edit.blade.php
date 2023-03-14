@@ -150,20 +150,21 @@
                         <div class="tab-pane fade border p-3" id="images-pane" role="tabpanel" aria-labelledby="images" tabindex="0">
                             <div class="mb-3">
                                 <label>Upload Images</label>
-                                <input type="file" name="image[]" multiple class="form-control"/>
+                                <input type="file" name="image[]" id="image" multiple class="form-control"/>
+                                <div id="frames" class="col-md-6"></div>
                             </div>
                             <div>
                                 @if($product->productImages)
                                     <div class="row">
                                         @foreach($product->productImages as $image)
-                                            <div class="col-md-2">
+                                            <div class="col-md-2 img-td">
                                                 <img src="{{asset($image->image)}}" style="height:80px; width:80px;"    class="me-4 border" alt="Img" />
                                                 <a href="{{url('admin/article-image/'.$image->id.'/delete')}}" class="d-block">Remove</a>
-                                                <div class="mb-3">
-                                                    <label>Caption</label>
-                                                    <input type="text" name="image_caption" value="{{$image->image_caption}}" class="form-control"/>
-                                                    <label>Credit</label>
-                                                    <input type="text" name="image_credit" value="{{$image->image_credit}}" class="form-control"/>
+                                                </br>
+                                                <textarea class="imageCaption form-control" rows="4">{{$image->image_caption}}</textarea>
+                                                <textarea class="imageCredit form-control" rows="4">{{$image->image_credit}}</textarea>
+                                                <div class="input-group mb-1">
+                                                        <button type="button" value="{{$image->id}}" class="updateCreditBtn btn btn-primary btn-sm text-white">Update</button>
                                                 </div>
                                             </div>
                                         @endforeach
@@ -224,6 +225,14 @@
 @push('script')
 <script>
     $(document).ready(function(){
+
+        $('#image').change(function(){
+        $("#frames").html('');
+            for (var i = 0; i < $(this)[0].files.length; i++) {
+                $("#frames").append('<img src="'+window.URL.createObjectURL(this.files[i])+'"width="100px" height="100px"/><input type="text" name="image_caption[]" class="form-control" placeholder="Add Caption"/><input type="text" name="image_credit[]" class="form-control" placeholder="Add Credit"/>');
+            }
+        });
+
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -254,6 +263,32 @@
                 }
             });
         });
+
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $(document).on('click', '.updateCreditBtn', function(){
+            var product_id = "{{$product->id}}";
+            var img_id = $(this).val();
+            var image_caption = $(this).closest('.img-td').find('.imageCaption').val();
+            var image_credit = $(this).closest('.img-td').find('.imageCredit').val();
+            var data = {
+                'product_id' : product_id,
+                'image_caption' : image_caption,
+                'image_credit' : image_credit,
+            };
+            $.ajax({
+                type: 'POST',
+                url: '/admin/image-caption/'+img_id,
+                data: data,
+                success: function(response){
+                    alert(response.message);
+                }
+            });
+        });
+
     });
 </script>
 @endpush

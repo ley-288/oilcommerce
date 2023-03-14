@@ -1,7 +1,34 @@
+<div class="search-overlay overlay-hide">
+    <div class="col-md-12">
+        <form action="{{url('search')}}" method="get" role="search">
+            <div class="search-padding d-flex flex-column text-center">
+                <div class="text-white">
+                    <p>Search <strong class="racing-green" style="font-size: 1.2rem;">Racing Green</strong> Articles</p>
+                </div>
+                </br></br>
+                <div class="input-group">
+                    <input type="search" name="search" value="{{Request::get('search')}}" placeholder="Search.." class="form-control search-bar" />
+                    <button class="btn bg-white search-button" type="submit">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
+                </br></br>
+                <div class="mt-5 text-white">
+                    <div class="close-search-overlay">
+                        Close
+                        <i class="fa fa-close"></i>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
 <div>
     <div class="footer-area">
         <div class="container">
             <div class="row">
+                {{--
                 <div class="col-md-12">
                     <form action="{{url('search')}}" method="get" role="search">
                         <div class="input-group">
@@ -12,10 +39,15 @@
                         </div>
                     </form>
                 </div>
-                </br>
-                </br></br></br>
+                --}}
+                <div class="col-md-12 d-flex justify-content-end float-end">
+                    <div class="search-btn">
+                        Search
+                        <i class="fa fa-search"></i>
+                    </div>
+                </div>
                 <div class="col-md-3">
-                    <h4 class="footer-heading racing-green">Racing Green Magazine</h4>
+                    <h4 class="footer-heading racing-green">RacingGreenMagazine</h4>
                 </div>
                 <div class="col-md-3">
                     <h4 class="footer-heading">Quick Links</h4>

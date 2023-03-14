@@ -103,26 +103,6 @@
                         </div>
                         <div class="tab-pane fade border p-3" id="details-pane" role="tabpanel" aria-labelledby="details" tabindex="0">
                             <div class="row">
-                                {{--
-                                <div class="col-md-4">
-                                    <div class="mb-3">
-                                        <label>Original Price</label>
-                                        <input type="text" name="original_price" class="form-control"/>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="mb-3">
-                                        <label>Selling Price</label>
-                                        <input type="text" name="selling_price" class="form-control"/>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="mb-3">
-                                        <label>Quantity</label>
-                                        <input type="number" name="quantity" class="form-control"/>
-                                    </div>
-                                </div>
-                                --}}
                                 <div class="col-md-4">
                                     <div class="mb-3">
                                         <label>Trending</label>
@@ -146,8 +126,10 @@
                         <div class="tab-pane fade border p-3" id="images-pane" role="tabpanel" aria-labelledby="images" tabindex="0">
                             <div class="mb-3">
                                 <label>Upload Images</label>
-                                <input type="file" name="image[]" multiple class="form-control"/>
+                                <input type="file" name="image[]" id="image" multiple class="form-control"/>
+                                <div id="frames" class="col-md-6"></div>
                             </div>
+                            <h4 class="p-1 bg-warning color-white">Add Credits Before Publishing</h4>
                         </div>
                         <div class="tab-pane fade border p-3" id="content-pane" role="tabpanel" aria-labelledby="content" tabindex="0">
                             <div class="mb-3">
@@ -187,3 +169,15 @@
 </div>
 
 @endsection
+@push('script')
+<script>
+$(document).ready(function(){
+    $('#image').change(function(){
+        $("#frames").html('');
+        for (var i = 0; i < $(this)[0].files.length; i++) {
+            $("#frames").append('<img src="'+window.URL.createObjectURL(this.files[i])+'"width="100px" height="100px"/><input type="text" name="image_caption[]" class="form-control" placeholder="Add Caption"/><input type="text" name="image_credit[]" class="form-control" placeholder="Add Credit"/>');
+        }
+    });
+});
+</script>
+@endpush

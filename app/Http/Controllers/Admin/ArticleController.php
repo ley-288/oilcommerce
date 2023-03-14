@@ -46,12 +46,6 @@ class ArticleController extends Controller
             'slug' => Str::slug($validatedData['slug']),
             'brand' => $validatedData['brand'],
             'summary' => $validatedData['summary'],
-            //'content' => $validatedData['content'],
-
-            //'original_price' => $validatedData['original_price'],
-            //'selling_price' => $validatedData['selling_price'],
-            //'quantity' => $validatedData['quantity'],
-
             'trending' => $request->trending == true ? '1':'0',
             'featured' => $request->featured == true ? '1':'0',
             'status' => $request->status == true ? '1':'0',
@@ -63,7 +57,7 @@ class ArticleController extends Controller
         if($request->hasFile('image')){
             $uploadPath = 'uploads/articles/';
             $i = 1;
-            foreach($request->file('image') as $imageFile){
+            foreach($request->file('image') as $key => $imageFile){
                 $extension = $imageFile->getClientOriginalExtension();
                 $filename = time().$i++.'.'.$extension;
                 $imageFile->move($uploadPath, $filename);
@@ -72,8 +66,8 @@ class ArticleController extends Controller
                 $product->productImages()->create([
                     'product_id' => $product->id,
                     'image' => $finalImagePathName,
-                    'image_caption' => 'Add Caption',
-                    'image_credit' => 'Add Credit',
+                    'image_caption' => $request->image_caption[$key] ?? 0,
+                    'image_credit' => $request->image_credit[$key] ?? 0,
                 ]);
             }
         }
@@ -120,12 +114,6 @@ class ArticleController extends Controller
                 'slug' => Str::slug($validatedData['slug']),
                 'brand' => $validatedData['brand'],
                 'summary' => $validatedData['summary'],
-                //'content' => $validatedData['content'],
-                /*
-                'original_price' => $validatedData['original_price'],
-                'selling_price' => $validatedData['selling_price'],
-                'quantity' => $validatedData['quantity'],
-                */
                 'trending' => $request->trending == true ? '1':'0',
                 'featured' => $request->featured == true ? '1':'0',
                 'status' => $request->status == true ? '1':'0',
@@ -137,7 +125,7 @@ class ArticleController extends Controller
             if($request->hasFile('image')){
                 $uploadPath = 'uploads/products/';
                 $i = 1;
-                foreach($request->file('image') as $imageFile){
+                foreach($request->file('image') as $key => $imageFile){
                     $extension = $imageFile->getClientOriginalExtension();
                     $filename = time().$i++.'.'.$extension;
                     $imageFile->move($uploadPath, $filename);
@@ -146,6 +134,8 @@ class ArticleController extends Controller
                     $product->productImages()->create([
                         'product_id' => $product->id,
                         'image' => $finalImagePathName,
+                        'image_caption' => $request->image_caption[$key] ?? 0,
+                        'image_credit' => $request->image_credit[$key] ?? 0,
                     ]);
                 }
             }
@@ -227,5 +217,16 @@ class ArticleController extends Controller
         $prodColor->delete();
 
         return response()->json(['message' => 'Article paragraph deleted']);
+    }
+
+    public function updateImgCap(Request $request, $img_id)
+    {
+        $imgData = Product::findOrFail($request->product_id)
+            ->productImages()->where('id', $img_id)->first();
+        $imgData->update([
+            'image_caption' => $request->image_caption,
+            'image_credit' => $request->image_credit
+        ]);
+        return response()->json(['message' => 'Caption updated']);
     }
 }
