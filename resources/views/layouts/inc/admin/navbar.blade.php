@@ -5,7 +5,7 @@
           <p class="headline-spot racing-green color-green headline-font">Racing Green</p>
       </a>
       <a class="navbar-brand brand-logo-mini" href="{{url('/')}}">
-        <img src="images/branches-blk.png" alt="logo" style="height:auto;"/>
+        <img src="images/rgm.png" alt="logo" style="height:auto;"/>
       </a>
     </div>
   </div>

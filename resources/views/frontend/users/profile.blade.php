@@ -23,8 +23,9 @@
                             <h4 class="text-muted">{{Auth::user()->email}}</h4>
                         </div>
                         <div class="col-md-12 d-flex justify-content-center mt-5">
-                            <a href="{{url('/favourites')}}">
-                                <button type="submit" class="btn btn-danger center"><i class="fa fa-heart-o"></i> Favourite Articles</button>
+                            <a href="{{url('/favourites')}}" class="fav-button">
+                                Favourite Articles
+                                <i class="fa fa-heart"></i>
                             </a>
                         </div>
                         {{--

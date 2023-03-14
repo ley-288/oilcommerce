@@ -27,11 +27,7 @@ class DashboardController extends Controller
         $thisMonth = Carbon::now()->format('m');
         $thisYear = Carbon::now()->format('Y');
 
-        $totalOrder = Order::count();
-        $todaysOrder = Order::whereDate('created_at', $todaysDate)->count();
-        $thisMonthsOrder = Order::whereMonth('created_at', $thisMonth)->count();
-        $thisYearsOrder = Order::whereYear('created_at', $thisYear)->count();
 
-        return view('admin.dashboard', compact('totalProducts', 'totalCategories', 'totalBrands', 'totalAllUsers', 'totalUser', 'totalAdmin', 'totalOrder', 'todaysOrder', 'thisMonthsOrder', 'thisYearsOrder'));
+        return view('admin.dashboard', compact('totalProducts', 'totalCategories', 'totalBrands','totalAllUsers', 'totalUser', 'totalAdmin'));
     }
 }

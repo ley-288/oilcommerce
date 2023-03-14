@@ -6,12 +6,6 @@
         <span class="menu-title">Dashboard</span>
       </a>
     </li>
-    <li class="nav-item {{Request::is('admin/orders') ? 'active' : ''}}">
-      <a class="nav-link" href="{{url('admin/orders')}}">
-        <i class="mdi mdi-sale menu-icon"></i>
-        <span class="menu-title">Orders</span>
-      </a>
-    </li>
     <li class="nav-item {{Request::is('admin/category*') ? 'active' : ''}}">
       <a class="nav-link" data-bs-toggle="collapse"
         href="#cat"

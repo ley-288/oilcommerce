@@ -18,7 +18,8 @@
     <!-- Custom file -->
     <link href="{{ asset('assets/css/custom.css') }}" rel="stylesheet">
     <!-- endinject -->
-    <link rel="shortcut icon" href="{{asset('admin/images/favicon.png')}}" />
+    <link rel="icon" type="image/x-icon" href="{{asset('admin/images/rgm.png?v=1.1')}}">
+    <link rel="shortcut icon" href="{{asset('admin/images/rgm.png')}}" />
     @livewireStyles
     {{--@vite(['resources/sass/app.scss', 'resources/js/app.js'])--}}
 </head>

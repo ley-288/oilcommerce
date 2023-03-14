@@ -78,16 +78,6 @@ class ArticleController extends Controller
             }
         }
 
-        if($request->colors){
-            foreach($request->colors as $key => $color){
-                $product->productColors()->create([
-                    'product_id' => $product->id,
-                    'color_id' => $color,
-                    'quantity' => $request->colorquantity[$key] ?? 0
-                ]);
-            }
-        }
-
         if($request->paragraphs){
             foreach($request->paragraphs as $key => $paragraph){
                 $product->productParagraphs()->create([
@@ -156,16 +146,6 @@ class ArticleController extends Controller
                     $product->productImages()->create([
                         'product_id' => $product->id,
                         'image' => $finalImagePathName,
-                    ]);
-                }
-            }
-
-            if($request->colors){
-                foreach($request->colors as $key => $color){
-                    $product->productColors()->create([
-                        'product_id' => $product->id,
-                        'color_id' => $color,
-                        'quantity' => $request->colorquantity[$key] ?? 0
                     ]);
                 }
             }

@@ -160,11 +160,11 @@
                                                 </br>
                                                 <div class="mb-3">
                                                     <label>Subheader:</label>
-                                                    <textarea name="paragrpahsub[{{$paragraph->id}}" class="form-control" rows="4"></textarea>
+                                                    <textarea name="paragrpahsub[{{$paragraph->id}}]" class="form-control" rows="4"></textarea>
                                                 </div>
                                                 <div class="mb-3">
                                                     <label>Content:</label>
-                                                    <textarea name="paragrpahcon[{{$paragraph->id}}" class="form-control" rows="4"></textarea>
+                                                    <textarea name="paragrpahcon[{{$paragraph->id}}]" class="form-control" rows="4"></textarea>
                                                 </div>
                                             </div>
                                         </div>

@@ -176,14 +176,12 @@
                         <div class="tab-pane fade border p-3" id="content-pane" role="tabpanel" tabindex="0">
                             <div class="mb-3">
                                 <h3>Add Paragraphs</h3>
-
                             </div>
                             <div class="table-responsive">
                                 <table class="table table-sm table-bordered">
                                     <thead>
                                         <tr>
                                             <th>Paragraph</th>
-
                                             <th>Update</th>
                                         </tr>
                                     </thead>

@@ -20,7 +20,7 @@ class WishlistShow extends Component
 
     public function render()
     {
-        $wishlist = Wishlist::where('user_id', auth()->user()->id)->get();
+        $wishlist = Wishlist::where('user_id', auth()->user()->id)->orderBy('id', 'DESC')->get();
         return view('livewire.frontend.wishlist-show', [
             'wishlist' => $wishlist,
         ]);

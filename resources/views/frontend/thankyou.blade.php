@@ -10,8 +10,8 @@
                     <h5 class="alert alert-success">{{session('message')}}</h5>
                 @endif
                 <div class="p-4 bg-white">
-                    <img src="{{asset('admin/images/branches-blk.png?v=1.1')}}" alt="logo" width="350" style="height:auto;"/>
-                    <h4>Thank you for shopping with {{$appSetting->website_name ?? 'Oil'}}! <br> Visit us again soon.</h4>
+                    <img src="{{asset('admin/images/rgm.png?v=1.1')}}" alt="logo" width="350" style="height:auto;"/>
+                    <h4>Thank you for shopping with {{$appSetting->website_name ?? 'Racing Green'}}! <br> Visit us again soon.</h4>
                     </br>
                     <a href="{{url('collections')}}" class="btn btn-primary">Shop now</a>
                 </div>

@@ -4,13 +4,13 @@
 
 <div class="py-5">
     <div class="container">
-        <div class="row">
-            <div class="col-md-12">
+        <div class="row col-md-8 border-right">
+            <div class="">
                 <h4>Featured</h4>
                 <div class="underline mb-4"></div>
             </div>
             @forelse($featuredProducts as $productItem)
-                <div class="col-md-12">
+                <div class="col-md-8">
                     <div class="search-card">
                         <div class="search-card-img">
                             @if($productItem->productImages->count() > 0)
@@ -20,17 +20,24 @@
                             @endif
                         </div>
                         <div class="search-card-body">
-                            <h5 class="product-name">
-                                <a href="{{url('/article/'.$productItem->category->slug.'/'.$productItem->slug)}}">
-                                    {{$productItem->title}}
-                                </a>
-                            </h5>
-                            <p class="product-brand">{{$productItem->headline}}</p>
+                            <div class="">
+                                <h5 class="mb-0 article-sub">
+                                    <a href="{{url('/article/'.$productItem->category->slug.'/'.$productItem->slug)}}">
+                                        {{ Str::limit($productItem->title, 30, '...') }}
+                                    </a>
+                                </h5>
+                                <p class="mb-0 article-con">{{$productItem->headline}}</p>
+                                @if(!empty($productItem->productParagraphs[0]))
+                                    <p class="mb-0 article-con">
+                                        {{ Str::limit($productItem->productParagraphs[0]->content, 50, '...') }}
+                                    </p>
+                                @endif
+                            </div>
                         </div>
                     </div>
                 </div>
             @empty
-                <div class="col-md-12 p-2">
+                <div class="col-md-8 p-2">
                     <h4 class="mb-4">No Article Available</h4>
                 </div>
             @endforelse

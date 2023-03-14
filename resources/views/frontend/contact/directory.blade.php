@@ -15,6 +15,8 @@
                         </br>
                         <div class="col-md-12 d-flex flex-column align-items-center justify-content-center">
                             <h4 class="text-bold">Directory</h4>
+                            <h5 class="text-muted">This is the brand directory us section of our website.</h5>
+                            </br>
                         </div>
                         </br>
                         </br>

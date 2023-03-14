@@ -2,14 +2,31 @@
     <div class="top-navbar">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-6 my-auto">
+                <div class="col-md-8 my-auto">
                     <a class="navbar-brand brand-logo" href="{{url('/')}}">
                         <ul class="nav justify-content-start flexed-nav">
                             <p class="headline-spot racing-green color-green headline-font">Racing Green Magazine</p>
                         </ul>
                     </a>
                 </div>
-                <div class="col-md-6 my-auto">
+                <div class="col-md-3 my-auto">
+                    @guest
+                        <ul class="nav justify-content-end flexed-nav">
+                            <a class="nav-link subscribe-button" href="{{ route('register') }}">
+                                Subscribe
+                                <i class="fa fa-rss"></i>
+                            </a>
+                        </ul>
+                    @else
+                        <ul class="nav justify-content-end flexed-nav">
+                            <a class="nav-link fav-button" href="{{ url('/favourites') }}">
+                                Favourites
+                                <i class="fa fa-heart"></i>
+                            </a>
+                        </ul>
+                    @endguest
+                </div>
+                <div class="col-md-1 my-auto">
                     <ul class="nav justify-content-end flexed-nav">
                         <a class="nav-link" href="#" id="navbarDropdown">
                             <i class="fa fa-bars" id="closure-icon"></i>
@@ -33,10 +50,10 @@
                         <div class="nav-link" href="#" style="color:gray;">
                             <p style="margin-bottom: 0;">Share to </p>
                         </div>
-                        <a class="nav-link share-to-fb" href="#" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" title="Share on Facebook" style="color:gray;">
+                        <a class="nav-link share-to-fb facebook-icon" href="#" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" title="Share on Facebook">
                             <i class="fa fa-facebook"></i>
                         </a>
-                        <a class="nav-link share-to-tw" href="#" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" title="Share on Twitter" style="color:gray;">
+                        <a class="nav-link share-to-tw twitter-icon" href="#" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" title="Share on Twitter">
                             <i class="fa fa-twitter"></i>
                         </a>
                     </ul>
@@ -46,12 +63,27 @@
     </div>
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
-            <a class="navbar-brand d-block d-sm-block d-md-none d-lg-none" href="#">
-                <p class="m-headline headline-spot racing-green color-green headline-font" style="margin-left:0;">Racing Green</p>
+            <a class="navbar-brand d-block d-sm-block d-md-none d-lg-none" href="{{url('/')}}">
+                <p class="m-headline headline-spot racing-green color-green headline-font" style="margin-left:0;">RGM</p>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="border:none;">
-                <span class="mobile-bars fa fa-bars black-bars"></span>
-            </button>
+            <div class="d-flex align-items-center">
+                <div class="d-lg-none sub-fav-bar">
+                    @guest
+                        <a href="{{ route('register') }}" class="subscribe-button" style="padding:5px;">
+                            Subscribe
+                            <i class="fa fa-rss"></i>
+                        </a>
+                    @else
+                        <a href="{{ url('/favourites') }}" class="fav-button" style="padding:5px;">
+                            Favourites
+                            <i class="fa fa-heart"></i>
+                        </a>
+                    @endguest
+                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="border:none;">
+                    <span class="mobile-bars fa fa-bars black-bars"></span>
+                </button>
+            </div>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <div class="navbar-nav me-auto mb-2 mb-lg-0 justify-content-center mobile-overlay">
                     @foreach($categoryList as $item)
@@ -76,10 +108,14 @@
                         <hr>
                         @guest
                             @if (Route::has('login'))
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link" href="{{ route('login') }}" style="color:white;">{{ __('Login') }}</a>
                             @endif
+                            </br>
                             @if (Route::has('register'))
-                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                <a class="nav-link subscribe-button" href="{{ route('register') }}">
+                                    Subscribe
+                                    <i class="fa fa-rss"></i>
+                                </a>
                             @endif
                         @else
                             <a class="dropdown-item" href="{{ route('logout') }}"
@@ -92,7 +128,6 @@
                             </form>
                         @endguest
                     </div>
-
                 </div>
             </div>
         </div>
@@ -126,8 +161,12 @@
                 @if (Route::has('login'))
                     <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                 @endif
+                </br>
                 @if (Route::has('register'))
-                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                    <a class="nav-link subscribe-button" href="{{ route('register') }}">
+                        Subscribe
+                        <i class="fa fa-rss"></i>
+                    </a>
                 @endif
             @else
                 <a class="dropdown-item" href="{{ route('logout') }}"

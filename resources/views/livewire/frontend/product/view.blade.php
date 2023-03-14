@@ -59,6 +59,8 @@
                         <p class="mb-0 article-sub">{{$product->productParagraphs[0]->subheader}}</p>
                         <p class="mb-0 article-con">{{$product->productParagraphs[0]->content}}</p>
                     </div>
+                @else
+                    <div class="mt-5"></div>
                 @endif
                 @if(!empty($product->productImages[1]))
                     <div class="col-md-5 mt-1">
@@ -78,6 +80,8 @@
                         <p class="mb-0 article-sub">{{$product->productParagraphs[1]->subheader}}</p>
                         <p class="mb-0 article-con">{{$product->productParagraphs[1]->content}}</p>
                     </div>
+                @else
+                    <div class="mt-5"></div>
                 @endif
                 @if(!empty($product->productImages[2]))
                     <div class="col-md-5 mt-1">
@@ -97,6 +101,8 @@
                         <p class="mb-0 article-sub">{{$product->productParagraphs[2]->subheader}}</p>
                         <p class="mb-0 article-con">{{$product->productParagraphs[2]->content}}</p>
                     </div>
+                @else
+                    <div class="mt-5"></div>
                 @endif
                 @if(!empty($product->productImages[3]))
                     <div class="col-md-5 mt-1">
@@ -116,6 +122,8 @@
                         <p class="mb-0 article-sub">{{$product->productParagraphs[3]->subheader}}</p>
                         <p class="mb-0 article-con">{{$product->productParagraphs[3]->content}}</p>
                     </div>
+                @else
+                    <div class="mt-5"></div>
                 @endif
                 @if(!empty($product->productImages[4]))
                     <div class="col-md-5 mt-1">
@@ -135,6 +143,8 @@
                         <p class="mb-0 article-sub">{{$product->productParagraphs[4]->subheader}}</p>
                         <p class="mb-0 article-con">{{$product->productParagraphs[4]->content}}</p>
                     </div>
+                @else
+                    <div class="mt-5"></div>
                 @endif
                 @if(!empty($product->productImages[5]))
                     <div class="col-md-5 mt-1">
@@ -154,6 +164,8 @@
                         <p class="mb-0 article-sub">{{$product->productParagraphs[5]->subheader}}</p>
                         <p class="mb-0 article-con">{{$product->productParagraphs[5]->content}}</p>
                     </div>
+                @else
+                    <div class="mt-5"></div>
                 @endif
                 @if(!empty($product->productImages[6]))
                     <div class="col-md-5 mt-1">
@@ -173,6 +185,8 @@
                         <p class="mb-0 article-sub">{{$product->productParagraphs[6]->subheader}}</p>
                         <p class="mb-0 article-con">{{$product->productParagraphs[6]->content}}</p>
                     </div>
+                @else
+                    <div class="mt-5"></div>
                 @endif
                 @if(!empty($product->productImages[7]))
                     <div class="col-md-5 mt-1">
@@ -192,6 +206,8 @@
                         <p class="mb-0 article-sub">{{$product->productParagraphs[7]->subheader}}</p>
                         <p class="mb-0 article-con">{{$product->productParagraphs[7]->content}}</p>
                     </div>
+                @else
+                    <div class="mt-5"></div>
                 @endif
                 @if(!empty($product->productImages[8]))
                     <div class="col-md-5 mt-1">
@@ -211,6 +227,8 @@
                         <p class="mb-0 article-sub">{{$product->productParagraphs[8]->subheader}}</p>
                         <p class="mb-0 article-con">{{$product->productParagraphs[8]->content}}</p>
                     </div>
+                @else
+                    <div class="mt-5"></div>
                 @endif
                 @if(!empty($product->productImages[9]))
                     <div class="col-md-5 mt-1">
@@ -230,6 +248,8 @@
                         <p class="mb-0 article-sub">{{$product->productParagraphs[9]->subheader}}</p>
                         <p class="mb-0 article-con">{{$product->productParagraphs[9]->content}}</p>
                     </div>
+                @else
+                    <div class="mt-5"></div>
                 @endif
             </div>
         </div>
@@ -272,52 +292,6 @@
             </div>
         </div>
     </div>
-    {{--
-    <div class="py-3 py-md-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 mb-3">
-                    <h6>Related Articles by @if($product) {{$product->brand}} @endif
-                    </h6>
-                    <div class="underline"></div>
-                </div>
-                <div class="col-md-12">
-                    <div class="owl-carousel owl-theme four-carousel">
-                        @if($category)
-                            @foreach($category->relatedProducts as $relatedProductItem)
-                                @if($relatedProductItem->brand == "$product->brand")
-                                    <div class="item mb-3">
-                                        <div class="product-card">
-                                            <div class="product-card-img">
-                                                @if($relatedProductItem->productImages->count() > 0)
-                                                    <a href="{{url('/article/'.$relatedProductItem->category->slug.'/'.$relatedProductItem->slug)}}">
-                                                        <img src="{{asset($relatedProductItem->productImages[0]->image)}}" alt="{{$relatedProductItem->name}}">
-                                                    </a>
-                                                @endif
-                                            </div>
-                                            <div class="product-card-body">
-                                                <h5 class="product-name">
-                                                    <a href="{{url('/article/'.$relatedProductItem->category->slug.'/'.$relatedProductItem->slug)}}">
-                                                        {{$relatedProductItem->headline}}
-                                                    </a>
-                                                </h5>
-                                                <p class="product-brand">{{$relatedProductItem->summary}}</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                @endif
-                            @endforeach
-                        @else
-                            <div class="p-2">
-                                <h4 class="mb-4">No Related Articles</h4>
-                            </div>
-                        @endif
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    --}}
 </div>
 
 @push('scripts')

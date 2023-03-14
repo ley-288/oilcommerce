@@ -13,6 +13,17 @@
     font-style: normal;
 }
 
+.caro-hero {
+    height: 60vh;
+    width: 100vw;
+    object-fit: cover;
+}
+
+.share-home {
+    font-size: 2rem;
+    margin: 0px 15px;
+}
+
 .jiant {
     font-family: "Phosphate";
 }
@@ -58,8 +69,8 @@ main {
 }
 
 .carousel-item .custom-carousel-content {
-    width: 50%;
-    transform: translate(0%, -10%);
+    width: 100%;
+    transform: translate(0%, -70%);
 }
 .custom-carousel-content {
     text-align: start;
@@ -68,7 +79,14 @@ main {
     font-size: 40px;
     font-weight: 700;
     color: #fff;
+    text-shadow: 0 0 10px black;
+}
+.custom-carousel-content h3 {
+    font-size: 26px;
+    font-weight: 300;
+    color: #fff;
     margin-bottom: 30px;
+    text-shadow: 0 0 10px black;
 }
 .custom-carousel-content h1 span {
     color: #fbff00;
@@ -78,10 +96,13 @@ main {
     font-weight: 400;
     color: #fff;
     margin-bottom: 30px;
+    text-shadow: 0 0 10px black;
 }
 .custom-carousel-content .btn-slider {
-    border: 1px solid #fff;
-    border-radius: 0px;
+    border: none;
+    box-shadow: 0px 0px 10px 0px black;
+    background: #ff00ce;
+    border-radius: 25px;
     padding: 8px 26px;
     color: #fff;
     font-size: 18px;
@@ -273,17 +294,49 @@ main {
     font-weight: bold;
     margin-bottom: 0;
 }
+
+.subscribe-button {
+    background: #1ce8c6;
+    border-radius: 25px;
+    color: black;
+}
+
+.fav-button {
+    background-image: radial-gradient(
+            circle farthest-corner at 35% 90%,
+            #82e1ff,
+            #0000 50%
+        ),
+        radial-gradient(circle farthest-corner at 0 140%, #ff90fe, #0000 50%),
+        radial-gradient(ellipse farthest-corner at 0 -25%, #ffadeb, #0000 50%),
+        radial-gradient(ellipse farthest-corner at 20% -50%, #fcd4d4, #0000 50%),
+        radial-gradient(ellipse farthest-corner at 100% 0, #ffd6b7, #0000 50%),
+        radial-gradient(ellipse farthest-corner at 60% -20%, #ffffa9, #0000 50%),
+        radial-gradient(ellipse farthest-corner at 100% 100%, #ffffa9, #0000),
+        linear-gradient(
+            #ffd6b7,
+            #fcd4d4 30%,
+            #ffadeb 50%,
+            #ff90fe 70%,
+            #82e1ff 100%
+        );
+    border-radius: 25px;
+    color: white !important;
+    padding: 5px;
+}
+
 /* Navbar End */
 
 /* Category Start */
+
 .category-card {
     border: 1px solid #ddd;
     margin-bottom: 24px;
     background-color: #fff;
-    height: 30vh;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    aspect-ratio: 1;
 }
 
 .categroy-card-overlay {
@@ -295,12 +348,12 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    backdrop-filter: brightness(0.9);
-    -webkit-backdrop-filter: brightness(0.9);
+    backdrop-filter: brightness(0.7);
+    -webkit-backdrop-filter: brightness(0.7);
 }
 
 .cat-overlay-font {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     font-weight: bold;
 }
 .category-card a {
@@ -320,6 +373,7 @@ main {
     color: #000;
     text-align: center;
 }
+
 /* Category End */
 
 /* Product Card */
@@ -391,6 +445,7 @@ main {
     font-size: 12px;
     margin-top: 10px;
 }
+
 /* Product Card End */
 
 /* Search Card */
@@ -401,6 +456,8 @@ main {
     border: none;
     margin-bottom: 24px;
     width: 100%;
+    flex-direction: row;
+    align-items: flex-start;
 }
 .search-card a {
     text-decoration: none;
@@ -415,7 +472,8 @@ main {
     border-radius: 25px;
 }
 .search-card .search-card-img {
-    width: 40%;
+    width: 50%;
+    aspect-ratio: 1;
     overflow: hidden;
 }
 .search-card .search-card-img img {
@@ -424,7 +482,10 @@ main {
     object-fit: cover;
 }
 .search-card .search-card-body {
-    padding: 10px 10px;
+    padding: 0px 0px 0px 10px;
+    width: 50%;
+    height: 190px;
+    overflow: scroll;
 }
 .search-card .search-card-body .search-brand {
     font-size: 14px;
@@ -468,7 +529,6 @@ main {
 /* Product View */
 
 .lower-image {
-    //max-width: 100%;
     width: 100%;
     object-fit: cover;
     max-height: 100%;
@@ -651,6 +711,7 @@ main {
     padding: 15px;
     border-radius: 25px;
 }
+
 /* Product View */
 
 .underline {
@@ -732,6 +793,7 @@ main {
     outline: none;
     text-align: center;
 }
+
 /* Cart or Wishlist */
 
 /* Checkout View */
@@ -803,6 +865,65 @@ main {
 /* End Footer View */
 
 /* Leyton Custom */
+
+.instagram-icon {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: #0000;
+    background-image: radial-gradient(
+            circle farthest-corner at 35% 90%,
+            #fec564,
+            transparent 50%
+        ),
+        radial-gradient(
+            circle farthest-corner at 0 140%,
+            #fec564,
+            transparent 50%
+        ),
+        radial-gradient(
+            ellipse farthest-corner at 0 -25%,
+            #5258cf,
+            transparent 50%
+        ),
+        radial-gradient(
+            ellipse farthest-corner at 20% -50%,
+            #5258cf,
+            transparent 50%
+        ),
+        radial-gradient(
+            ellipse farthest-corner at 100% 0,
+            #893dc2,
+            transparent 50%
+        ),
+        radial-gradient(
+            ellipse farthest-corner at 60% -20%,
+            #893dc2,
+            transparent 50%
+        ),
+        radial-gradient(
+            ellipse farthest-corner at 100% 100%,
+            #d9317a,
+            transparent
+        ),
+        linear-gradient(
+            #6559ca,
+            #bc318f 30%,
+            #e33f5f 50%,
+            #f77638 70%,
+            #fec66d 100%
+        );
+}
+
+.facebook-icon {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: #0000;
+    background-image: linear-gradient(#0177ed, #0177ed);
+}
+
+.twitter-icon {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: #0000;
+    background-image: linear-gradient(#01a1ee, #01a1ee);
+}
 
 /* Admin Custom */
 
@@ -887,6 +1008,16 @@ a {
 
 /* End Admin View */
 
+/* Start Auth View */
+
+.login-button-holder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* End Auth View */
+
 /* Specific Screen Sizes */
 
 @media only screen and (min-width: 600px) {
@@ -895,6 +1026,18 @@ a {
     }
     .mobile-share-bar {
         display: none;
+    }
+
+    .log-card-body {
+        padding: 0 20vw;
+    }
+
+    .filtered-image {
+        filter: brightness(0.9);
+        -webkit-filter: brightness(0.9);
+    }
+    .border-right {
+        border-right: 1px solid lightgray;
     }
 }
 

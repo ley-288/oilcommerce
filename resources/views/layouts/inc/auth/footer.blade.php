@@ -2,6 +2,7 @@
     <div class="footer-area">
         <div class="container">
             <div class="row">
+                {{--
                 <div class="col-md-12">
                     <form action="{{url('search')}}" method="get" role="search">
                         <div class="input-group">
@@ -14,29 +15,21 @@
                 </div>
                 </br>
                 </br></br></br>
+                --}}
                 <div class="col-md-3">
                     <h4 class="footer-heading racing-green">Racing Green Magazine</h4>
                 </div>
                 <div class="col-md-3">
                     <h4 class="footer-heading">Quick Links</h4>
                     <div class="mb-2"><a href="{{url('/')}}" relatedProductItem>Home</a></div>
-                    <div class="mb-2"><a href="{{url('/profile')}}" relatedProductItem>Profile</a></div>
                     <div class="mb-2"><a href="{{url('/about-us')}}" relatedProductItem>About Us</a></div>
                     <div class="mb-2"><a href="{{url('/about-us')}}" relatedProductItem>Contact Us</a></div>
                     <div class="mb-2"><a href="{{url('/about-us')}}" relatedProductItem>Contribute</a></div>
-                    <div class="mb-2"><a href="{{url('/favourites')}}" relatedProductItem>Favourites</a></div>
                     <div class="mb-2"><a href="{{url('/brand-directory')}}" relatedProductItem>Directory</a></div>
                 </div>
                 <div class="col-md-3">
                     <a href="{{url('/article')}}" relatedProductItem><h4 class="footer-heading">Articles</h4></a>
                     <div class="mb-2"><a href="{{url('/latest')}}" relatedProductItem>Latest Articles</a></div>
-                    @foreach($categoryList as $item)
-                        <div class="mb-2" id="{{$item->slug}}" data-src="{{asset($item->image)}}">
-                            <a href="{{url('/article/'.$item->slug)}}">
-                                {{$item->name}}
-                            </a>
-                        </div>
-                    @endforeach
                 </div>
                 <div class="col-md-3">
                     <h4 class="footer-heading">Reach Us</h4>
@@ -50,14 +43,6 @@
                             {{$appSetting->email1 ?? 'email'}}
                         </a>
                     </div>
-                    @guest
-                        <ul class="nav flexed-nav">
-                            <a class="nav-link subscribe-button" href="{{ route('register') }}" style="color:black; font-weight:bold;">
-                                Subscribe
-                                <i class="fa fa-rss"></i>
-                            </a>
-                        </ul>
-                    @endguest
                     @if(Auth::user())
                         @if(Auth::user()->role_as == '1')
                             <div class="mb-2">

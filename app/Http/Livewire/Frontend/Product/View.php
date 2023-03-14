@@ -17,9 +17,9 @@ class View extends Component
         {
             if(Wishlist::where('user_id', auth()->user()->id)->where('product_id',$productId)->exists())
             {
-                session()->flash('message', 'Already Added to Wishlist');
+                session()->flash('message', 'Article already in Favourites');
                 $this->dispatchBrowserEvent('message', [
-                    'text' => 'Already Added to Favourites',
+                    'text' => 'Article already in Favourites',
                     'type' => 'warning',
                     'status' => 409
                 ]);
@@ -32,7 +32,7 @@ class View extends Component
                     'product_id' => $productId
                 ]);
                 $this->emit('wishlistAddedUpdated');
-                session()->flash('message', 'Added to Wishlist');
+                session()->flash('message', 'Added to Favourites');
                 $this->dispatchBrowserEvent('message', [
                     'text' => 'Added to Favourites',
                     'type' => 'success',
@@ -42,7 +42,7 @@ class View extends Component
         }
         else
         {
-            session()->flash('message', 'Please Login to add to wishlist');
+            session()->flash('message', 'Please Login to add to favourites');
             $this->dispatchBrowserEvent('message', [
                 'text' => 'Please Login',
                 'type' => 'info',
@@ -92,7 +92,7 @@ class View extends Component
                         if(Cart::where('user_id', auth()->user()->id)->where('product_id', $productId)->where('product_color_id', $this->productColorId)->exists())
                         {
                             $this->dispatchBrowserEvent('message', [
-                                'text' => 'Product already added',
+                                'text' => 'Article already added',
                                 'type' => 'info',
                                 'status' => 200
                             ]);
@@ -154,7 +154,7 @@ class View extends Component
                     if(Cart::where('user_id', auth()->user()->id)->where('product_id', $productId)->exists())
                     {
                         $this->dispatchBrowserEvent('message', [
-                            'text' => 'Product already added',
+                            'text' => 'Article already added',
                             'type' => 'info',
                             'status' => 200
                         ]);

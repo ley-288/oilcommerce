@@ -12,12 +12,11 @@ class FrontendController extends Controller
 {
     public function index()
     {
-        $sliders = Slider::where('status', '0')->get();
-        $trendingProducts = Product::where('trending', '1')->latest()->take(15)->get();
         $newArrivalProducts = Product::latest()->take(14)->get();
+        $featuredHead = Product::where('featured', '1')->latest()->take(3)->get();
         $featuredProducts = Product::where('featured', '1')->latest()->take(14)->get();
         $categoryList = Category::where('status', 0)->get();
-        return view('frontend.index', compact('sliders', 'trendingProducts', 'newArrivalProducts', 'featuredProducts', 'categoryList'));
+        return view('frontend.index', compact('newArrivalProducts', 'featuredHead', 'featuredProducts', 'categoryList'));
     }
 
     public function searchProducts(Request $request)

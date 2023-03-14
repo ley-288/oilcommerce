@@ -11,6 +11,8 @@
     <meta name="author" content="Racing Green">
     <meta name="theme-color" content="white"/>
     <!-- Meta Images -->
+    <link rel="icon" type="image/x-icon" href="{{asset('admin/images/rgm.png?v=1.1')}}">
+    <link rel="shortcut icon" href="{{asset('admin/images/rgm.png')}}" />
     <meta property="og:image:type" content="image/png">
     <meta property="og:image" content="#">
     <meta property="og:image:width" content="500"/>
