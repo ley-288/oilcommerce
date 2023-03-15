@@ -55,12 +55,12 @@
                                 </select>
                             </div>
                             <div class="mb-3">
-                                <label>Headline</label>
-                                <input type="text" name="headline" value="{{$product->headline}}" class="form-control"/>
-                            </div>
-                            <div class="mb-3">
                                 <label>Title</label>
                                 <input type="text" name="title" value="{{$product->title}}" class="form-control"/>
+                            </div>
+                            <div class="mb-3">
+                                <label>Headline</label>
+                                <input type="text" name="headline" value="{{$product->headline}}" class="form-control"/>
                             </div>
                             <div class="mb-3">
                                 <label>Author</label>
@@ -141,7 +141,7 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="mb-3">
-                                        <label>Status</label>
+                                        <label>Unpublished</label>
                                         <input type="checkbox" name="status" {{ $product->status == '1' ? 'checked' : '' }} />
                                     </div>
                                 </div>

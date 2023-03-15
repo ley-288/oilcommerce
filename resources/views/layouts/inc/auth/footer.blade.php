@@ -2,20 +2,6 @@
     <div class="footer-area">
         <div class="container">
             <div class="row">
-                {{--
-                <div class="col-md-12">
-                    <form action="{{url('search')}}" method="get" role="search">
-                        <div class="input-group">
-                            <input type="search" name="search" value="{{Request::get('search')}}" placeholder="Search Racing Green Articles.." class="form-control" />
-                            <button class="btn bg-white search-button" type="submit">
-                                <i class="fa fa-search"></i>
-                            </button>
-                        </div>
-                    </form>
-                </div>
-                </br>
-                </br></br></br>
-                --}}
                 <div class="col-md-3">
                     <h4 class="footer-heading racing-green">Racing Green Magazine</h4>
                 </div>

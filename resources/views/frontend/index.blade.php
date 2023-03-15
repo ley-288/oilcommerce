@@ -127,8 +127,8 @@
                     </div>
                 </div>
             @endif
-            <div class="col-md-8">
-                <a href="{{url('/featured')}}" class="btn btn-warning justify-content-center">Read More Featured</a>
+            <div class="col-md-8 col-md-8 d-flex justify-content-center">
+                <a href="{{url('/featured')}}" class="btn btn-dark">Read More Featured</a>
             </div>
         </div>
     </div>
@@ -176,8 +176,8 @@
                     </div>
                 </div>
             @endif
-            <div class="col-md-8">
-                <a href="{{url('/latest')}}" class="btn btn-warning justify-content-center">Read More Latest</a>
+            <div class="col-md-8 col-md-8 d-flex justify-content-center">
+                <a href="{{url('/latest')}}" class="btn btn-dark">Read More Latest</a>
             </div>
         </div>
     </div>

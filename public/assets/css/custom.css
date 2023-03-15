@@ -64,12 +64,14 @@ main {
     font-size: 1.2rem;
 }
 
-/* START BOOTSTRAP BUTTON COLOUR */
+/* START BOOTSTRAP BUTTON */
 
-.btn-warning {
+.share-home:hover {
+    transform: scale(1.1);
 }
 
-.btn-danger {
+.btn:hover {
+    transform: scale(1.1);
 }
 
 /* END BOOTSTRAP BUTTON COLOUR */
@@ -118,6 +120,15 @@ main {
     font-size: 18px;
     font-weight: 600;
     letter-spacing: 0.5px;
+}
+
+.carousel-control-next-icon {
+    filter: drop-shadow(2px 4px 6px black);
+    -webkit-filter: drop-shadow(2px 4px 6px black);
+}
+.carousel-control-prev-icon {
+    filter: drop-shadow(2px 4px 6px black);
+    -webkit-filter: drop-shadow(2px 4px 6px black);
 }
 
 /* Navbar Start */
@@ -328,12 +339,22 @@ main {
     color: black;
     padding: 10px;
 }
+.subscribe-button:hover {
+    background: #1ce8c6;
+    border: inherit;
+}
 
 .fav-button {
-    background: #ff00ce;
+    background: #ff41b5;
+    filter: brightness(1.2);
+    -webkit-filter: brightness(1.2);
     border-radius: 25px;
     color: white !important;
     padding: 10px;
+}
+.fav-button:hover {
+    background: #ff41b5;
+    border: inherit;
 }
 
 .search-btn {
@@ -973,6 +994,10 @@ a {
     border-top-right-radius: 25px !important;
     border-bottom-right-radius: 25px !important;
     border-left: none;
+}
+.search-button:hover {
+    background: inherit;
+    border: inherit;
 }
 
 .alertify-notifier .ajs-message {

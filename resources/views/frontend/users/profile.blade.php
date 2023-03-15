@@ -23,7 +23,7 @@
                             <h4 class="text-muted">{{Auth::user()->email}}</h4>
                         </div>
                         <div class="col-md-12 d-flex justify-content-center mt-5">
-                            <a href="{{url('/favourites')}}" class="fav-button">
+                            <a href="{{url('/favourites')}}" class="btn fav-button">
                                 Favourite Articles
                                 <i class="fa fa-heart"></i>
                             </a>
@@ -74,7 +74,7 @@
                         </br>
                         </br>
                         <div class="col-md-12 d-flex justify-content-center">
-                            <a href="{{url('/change-password')}}" class="btn btn-warning float-end">Change Password</a>
+                            <a href="{{url('/change-password')}}" class="btn btn-dark float-end">Change Password</a>
                         </div>
                     </div>
                 </div>

@@ -28,20 +28,8 @@
     <div class="footer-area">
         <div class="container">
             <div class="row">
-                {{--
-                <div class="col-md-12">
-                    <form action="{{url('search')}}" method="get" role="search">
-                        <div class="input-group">
-                            <input type="search" name="search" value="{{Request::get('search')}}" placeholder="Search Racing Green Articles.." class="form-control" />
-                            <button class="btn bg-white search-button" type="submit">
-                                <i class="fa fa-search"></i>
-                            </button>
-                        </div>
-                    </form>
-                </div>
-                --}}
                 <div class="col-md-12 d-flex justify-content-end float-end">
-                    <div class="search-btn">
+                    <div class="btn search-btn">
                         Search
                         <i class="fa fa-search"></i>
                     </div>
@@ -84,7 +72,7 @@
                     </div>
                     @guest
                         <ul class="nav flexed-nav">
-                            <a class="nav-link subscribe-button" href="{{ route('register') }}" style="color:black; font-weight:bold;">
+                            <a class="btn subscribe-button" href="{{ route('register') }}" style="color:black; font-weight:bold;">
                                 Subscribe
                                 <i class="fa fa-rss"></i>
                             </a>

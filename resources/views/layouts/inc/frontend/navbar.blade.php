@@ -12,14 +12,14 @@
                 <div class="col-md-3 my-auto">
                     @guest
                         <ul class="nav justify-content-end flexed-nav">
-                            <a class="nav-link subscribe-button" href="{{ route('register') }}">
+                            <a class="btn subscribe-button" href="{{ route('register') }}">
                                 Subscribe
                                 <i class="fa fa-rss"></i>
                             </a>
                         </ul>
                     @else
                         <ul class="nav justify-content-end flexed-nav">
-                            <a class="nav-link fav-button" href="{{ url('/favourites') }}">
+                            <a class="btn fav-button" href="{{ url('/favourites') }}">
                                 Favourites
                                 <i class="fa fa-heart"></i>
                             </a>
@@ -74,7 +74,7 @@
                             <i class="fa fa-rss"></i>
                         </a>
                     @else
-                        <a href="{{ url('/favourites') }}" class="fav-button">
+                        <a href="{{ url('/favourites') }}" class="btn fav-button">
                             Favourites
                             <i class="fa fa-heart"></i>
                         </a>

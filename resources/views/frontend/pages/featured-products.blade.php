@@ -42,7 +42,7 @@
                 </div>
             @endforelse
             <div class="text-center">
-                <a href="{{url('/article')}}" class="btn btn-warning px-3"> View More</a>
+                <a href="{{url('/article')}}" class="btn btn-dark px-3"> View More</a>
             </div>
         </div>
     </div>

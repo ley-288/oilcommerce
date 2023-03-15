@@ -21,7 +21,7 @@
                                                         </h4>
                                                     </a>
                                                         <div>
-                                                            <button type="button" wire:click="removeWishlistItem({{$wishlistItem->id}})" class="btn btn-danger btn-sm">
+                                                            <button type="button" wire:click="removeWishlistItem({{$wishlistItem->id}})" class="btn btn-light btn-sm">
                                                                 <span wire:loading.remove wire:target="removeWishlistItem({{$wishlistItem->id}})">
                                                                     <i class="fa fa-heart-o"></i> Remove
                                                                 </span>

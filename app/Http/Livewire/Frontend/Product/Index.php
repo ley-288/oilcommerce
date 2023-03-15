@@ -36,6 +36,7 @@ class Index extends Component
                 });
             })
             ->where('status', '0')
+            ->orderBy('id', 'DESC')
             ->get();
         return view('livewire.frontend.product.index', [
             'products' => $this->products,

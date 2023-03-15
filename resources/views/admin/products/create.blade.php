@@ -51,12 +51,12 @@
                                 </select>
                             </div>
                             <div class="mb-3">
-                                <label>Headline</label>
-                                <input type="text" name="headline" class="form-control"/>
-                            </div>
-                            <div class="mb-3">
                                 <label>Title</label>
                                 <input type="text" name="title" class="form-control"/>
+                            </div>
+                            <div class="mb-3">
+                                <label>Headline</label>
+                                <input type="text" name="headline" class="form-control"/>
                             </div>
                             <div class="mb-3">
                                 <label>Author</label>
@@ -129,7 +129,6 @@
                                 <input type="file" name="image[]" id="image" multiple class="form-control"/>
                                 <div id="frames" class="col-md-6"></div>
                             </div>
-                            <h4 class="p-1 bg-warning color-white">Add Credits Before Publishing</h4>
                         </div>
                         <div class="tab-pane fade border p-3" id="content-pane" role="tabpanel" aria-labelledby="content" tabindex="0">
                             <div class="mb-3">

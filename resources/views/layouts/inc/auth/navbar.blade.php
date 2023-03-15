@@ -12,13 +12,13 @@
                 <div class="col-md-6 my-auto">
                     <ul class="nav justify-content-end">
                         @if (Route::has('login'))
-                            <li class="nav-item">
+                            <li class="nav-item" style="padding:3px;">
                                 <a class="nav-link text-muted" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
                         @endif
                         @if (Route::has('register'))
                             <li class="nav-item">
-                                <a class="nav-link subscribe-button" href="{{ route('register') }}">
+                                <a class="btn subscribe-button" href="{{ route('register') }}">
                                     Subscribe
                                     <i class="fa fa-rss"></i>
                                 </a>
@@ -63,7 +63,7 @@
                                 <a class="nav-link" href="{{ route('login') }}" style="color:white;">{{ __('Login') }}</a>
                             @endif
                             @if (Route::has('register'))
-                                <a class="nav-link subscribe-button" href="{{ route('register') }}">
+                                <a class="btn subscribe-button" href="{{ route('register') }}">
                                     Subscribe
                                     <i class="fa fa-rss"></i>
                                 </a>
