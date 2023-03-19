@@ -44,9 +44,14 @@
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
     @livewireStyles
+    @stack('styles')
     {{--@vite(['resources/sass/app.scss', 'resources/js/app.js'])--}}
 </head>
 <body>
+    <div class="loading-overlay">
+        <h1 class="headline-spot racing-green color-green headline-font" style="margin-left:0;">RGM</h1>
+        <img src="{{ asset('admin/images/loading.gif') }}" class='mt-3 loading-gif' height='25' width='25' alt='RGM'>
+    </div>
     <div id="app">
         @include('layouts.inc.frontend.navbar')
         <main>
@@ -58,6 +63,7 @@
     <script src="{{ asset('assets/js/jquery-3.6.2.min.js') }}"></script>
     <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
     <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+    <script src="{{ asset('assets/js/jscroll.js') }}"></script>
     <script>
         window.addEventListener('message', event => {
             if(event.detail){
@@ -65,10 +71,27 @@
                 alertify.notify(event.detail.text, event.detail.type);
             }
         });
+        $(document).ready(function(){
+            const loadingOverlay = document.querySelector('.loading-overlay');
+            loadingOverlay.classList.toggle('hide-loading-overlay');
+        });
+        $('ul.pagination').hide();
+        $(function() {
+            $('.scrollbox').jscroll({
+                autoTrigger: true,
+                padding: 0,
+                nextSelector: '.pagination li.active + li a',
+                contentSelector: 'div.scrollbox',
+                callback: function() {
+                    $('ul.pagination').remove();
+                }
+            });
+        });
     </script>
     <script src="{{ asset('assets/js/owl.carousel.min.js') }}"></script>
     <script src="{{ asset('assets/exzoom/jquery.exzoom.js') }}"></script>
     <script src="{{ asset('assets/js/custom.js') }}"></script>
+    <script src="{{ asset('assets/js/cookie.js') }}"></script>
     @yield('script')
     @livewireScripts
     @stack('scripts')

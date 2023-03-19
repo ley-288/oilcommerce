@@ -10,7 +10,7 @@
                     <a href="{{url('/article/'.$categoryItem->slug)}}">
                         <div class="category-card" style="background-image:url({{asset($categoryItem->image)}});">
                             <div class="categroy-card-overlay">
-                                <p class="cat-overlay-font">{{$categoryItem->name}}</p>
+                                <p class="cat-page-overlay-font">{{$categoryItem->name}}</p>
                             </div>
                         </div>
                     </a>

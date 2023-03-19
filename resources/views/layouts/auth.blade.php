@@ -72,6 +72,7 @@
     </script>
     <script src="{{ asset('assets/js/owl.carousel.min.js') }}"></script>
     <script src="{{ asset('assets/exzoom/jquery.exzoom.js') }}"></script>
+    <script src="{{ asset('assets/js/cookie.js') }}"></script>
     @yield('script')
     @livewireScripts
     @stack('scripts')

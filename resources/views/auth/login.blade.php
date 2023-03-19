@@ -13,6 +13,27 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-body log-card-body">
+                    <div class="row mb-3">
+                        <div class="col-md-12">
+                            <a class="form-control fb-btn" href="{{ url('auth/facebook') }}">
+                                Login with Facebook
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-12">
+                            <a class="form-control google-btn" href="{{ url('auth/google') }}">
+                                Login with Google
+                                <i class="fa fa-google"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-12">
+                            <p class="text-muted text-center m-0"> - or - </p>
+                        </div>
+                    </div>
                     <form method="POST" action="{{ route('login') }}" class="justify-content-end">
                         @csrf
                         <div class="row mb-3">

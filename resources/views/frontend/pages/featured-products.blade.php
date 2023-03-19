@@ -1,16 +1,30 @@
 @extends('layouts.app')
-@section('title', 'Featured')
+@section('title', 'New Arrivals')
 @section('content')
+
+@push('styles')
+<style>
+    .hidable-div{
+        display:none;
+    }
+</style>
+@endpush
 
 <div class="py-5">
     <div class="container">
-        <div class="row col-md-8 border-right">
+        <div class="row col-md-8">
             <div class="">
-                <h4>Featured</h4>
-                <div class="underline mb-4"></div>
+                <h2 style="font-weight:bold;">Featured</h2>
             </div>
+        </div>
+    </div>
+</div>
+<div class="scrollbox">
+    <div class="container">
+        <div class="row col-md-8 border-right">
+            <div>
             @forelse($featuredProducts as $productItem)
-                <div class="col-md-8">
+                <div class="col-md-8 ">
                     <div class="search-card">
                         <div class="search-card-img">
                             @if($productItem->productImages->count() > 0)
@@ -37,16 +51,19 @@
                     </div>
                 </div>
             @empty
-                <div class="col-md-8 p-2">
+                <div class="col-md-12 p-2">
                     <h4 class="mb-4">No Article Available</h4>
                 </div>
             @endforelse
-            <div class="text-center">
-                <a href="{{url('/article')}}" class="btn btn-dark px-3"> View More</a>
             </div>
+            {{ $featuredProducts->links() }}
         </div>
     </div>
 </div>
-
+<div class="py-5">
+    <div class="text-center">
+        <a href="{{url('/article')}}" class="btn btn-dark px-3"> View More</a>
+    </div>
+</div>
 
 @endsection

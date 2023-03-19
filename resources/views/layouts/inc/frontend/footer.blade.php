@@ -24,7 +24,7 @@
     </div>
 </div>
 
-<div>
+<div class="hidable-div">
     <div class="footer-area">
         <div class="container">
             <div class="row">
@@ -35,7 +35,17 @@
                     </div>
                 </div>
                 <div class="col-md-3">
-                    <h4 class="footer-heading racing-green">RacingGreenMagazine</h4>
+                    <a href="{{url('/')}}"><h4 class="footer-heading racing-green">RacingGreenMagazine</h4></a>
+                </div>
+                <div class="col-md-3">
+                    <a href="{{url('/article')}}" relatedProductItem><h4 class="footer-heading">Articles</h4></a>
+                    @foreach($categoryList as $item)
+                        <div class="mb-2" id="{{$item->slug}}" data-src="{{asset($item->image)}}">
+                            <a href="{{url('/article/'.$item->slug)}}">
+                                {{$item->name}}
+                            </a>
+                        </div>
+                    @endforeach
                 </div>
                 <div class="col-md-3">
                     <h4 class="footer-heading">Quick Links</h4>
@@ -45,18 +55,10 @@
                     <div class="mb-2"><a href="{{url('/about-us')}}" relatedProductItem>Contact Us</a></div>
                     <div class="mb-2"><a href="{{url('/about-us')}}" relatedProductItem>Contribute</a></div>
                     <div class="mb-2"><a href="{{url('/favourites')}}" relatedProductItem>Favourites</a></div>
-                    <div class="mb-2"><a href="{{url('/brand-directory')}}" relatedProductItem>Directory</a></div>
-                </div>
-                <div class="col-md-3">
-                    <a href="{{url('/article')}}" relatedProductItem><h4 class="footer-heading">Articles</h4></a>
+                    {{--<div class="mb-2"><a href="{{url('/brand-directory')}}" relatedProductItem>Directory</a></div>--}}
                     <div class="mb-2"><a href="{{url('/latest')}}" relatedProductItem>Latest Articles</a></div>
-                    @foreach($categoryList as $item)
-                        <div class="mb-2" id="{{$item->slug}}" data-src="{{asset($item->image)}}">
-                            <a href="{{url('/article/'.$item->slug)}}">
-                                {{$item->name}}
-                            </a>
-                        </div>
-                    @endforeach
+                    <div class="mb-2"><a href="{{url('/cookie-policy')}}" relatedProductItem>Cookie Policy</a></div>
+                    <div class="mb-2"><a href="{{url('/privacy-policy')}}" relatedProductItem>Privacy Policy</a></div>
                 </div>
                 <div class="col-md-3">
                     <h4 class="footer-heading">Reach Us</h4>
@@ -127,3 +129,17 @@
         </div>
     </div>
 </div>
+<?php
+    /* Check if the user has not visited yet this website
+    (or not accepted the cookies usage) */
+    if(!isset($_COOKIE['infoCookies']))
+    {
+        /* Insert below the link to cookies policy */
+        $cookiePolicy = "http://www.racinggreenmagazine.com";
+        echo " <div id='cookies' class='cookies'><div><strong class='racing-green'>RacingGreenMagazine</strong> uses cookies to improve your experience.";
+        echo " <a class='cookieLinks' target='_blank' style='color:white;' href='$cookiePolicy'>You can read our policy here</a>.";
+        echo " By browsing our site you accept our cookies policy.</div>";
+        /* if "OK" clicked, call the JS function to hide the popup and set the cookie */
+        echo" <div><a onClick='hideCookie();' class='cookieLinks btn btn-light' href=#>Accept</a></div></div>";
+    }
+?>

@@ -1,4 +1,4 @@
-<div>
+<div class="scrollbox">
     <div class="row">
         <div class="row col-md-8 border-right">
             @forelse($products as $productItem)
@@ -35,6 +35,12 @@
                     </div>
                 </div>
             @endforelse
+            {{ $products->links() }}
         </div>
+    </div>
+</div>
+<div class="py-5">
+    <div class="text-center">
+        <a href="{{url('/article')}}" class="btn btn-dark px-3"> View More</a>
     </div>
 </div>

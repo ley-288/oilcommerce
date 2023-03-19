@@ -7,7 +7,7 @@ use App\Models\Product;
 
 class Index extends Component
 {
-    public $products, $category, $brandInputs = [], $priceInput;
+    public $category, $brandInputs = [], $priceInput; //$products
 
     protected $queryString = [
         'brandInputs' => ['except' => '', 'as' => 'brand'],
@@ -23,7 +23,8 @@ class Index extends Component
     public function render()
     {
         $category = $this->category;
-        $this->products = Product::where('category_id', $category->id)
+        //$this->products
+        $products = Product::where('category_id', $category->id)
             ->when($this->brandInputs, function($q){
                 $q->whereIn('brand', $this->brandInputs);
             })
@@ -37,9 +38,10 @@ class Index extends Component
             })
             ->where('status', '0')
             ->orderBy('id', 'DESC')
-            ->get();
+            //->get();
+            ->paginate(10);
         return view('livewire.frontend.product.index', [
-            'products' => $this->products,
+            'products' => $products, //$this->products
             'category' => $category
         ]);
     }

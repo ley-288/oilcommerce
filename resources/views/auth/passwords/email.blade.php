@@ -14,7 +14,7 @@
             <div class="card">
                 <div class="card-body log-card-body">
                     @if (session('status'))
-                        <div class="alert alert-success" role="alert">
+                        <div class="alert alert-light" role="alert">
                             {{ session('status') }}
                         </div>
                     @endif

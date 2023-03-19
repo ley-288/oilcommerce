@@ -16,9 +16,17 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 */
 
 Auth::routes();
+
+Route::controller(App\Http\Controllers\Auth\SocialController::class)->group(function () {
+    Route::get('auth/facebook', 'facebookRedirect');
+    Route::get('auth/facebook/callback', 'loginWithFacebook');
+    Route::get('auth/google', 'googleRedirect');
+    Route::get('auth/google/callback', 'loginWithGoogle');
+});
 
 Route::controller(App\Http\Controllers\Frontend\FrontendController::class)->group(function () {
     Route::get('/', 'index');
@@ -30,6 +38,8 @@ Route::controller(App\Http\Controllers\Frontend\FrontendController::class)->grou
     Route::get('/search', 'searchProducts');
     Route::get('/about-us', 'aboutUs');
     Route::get('/brand-directory', 'brandDirectory');
+    Route::get('/cookie-policy', 'cookiePolicy');
+    Route::get('/privacy-policy', 'privacyPolicy');
 });
 
 Route::middleware(['auth'])->group(function(){
@@ -45,8 +55,6 @@ Route::middleware(['auth'])->group(function(){
 });
 
 Route::get('/thank-you', [App\Http\Controllers\Frontend\FrontendController::class, 'thankyou']);
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function() {
     Route::get('dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index']);

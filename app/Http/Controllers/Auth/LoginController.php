@@ -27,13 +27,19 @@ class LoginController extends Controller
      *
      * @var string
      */
+
     //protected $redirectTo = RouteServiceProvider::HOME;
+
     protected function authenticated()
     {
         if(Auth::user()->role_as == '1'){
             return redirect('admin/dashboard')->with('message', 'Welcome to Dashboard');
         } else {
-            return redirect('/home')->with('status', 'Logged in successfully');
+            $email = Auth::user()->email;
+            $fullname = Auth::user()->name;
+            $name = explode(' ', trim($fullname))[0];
+
+            return redirect('/')->with('message', '<div class="text-center"><p class="welcome-message">Welcome back '.$name.'</div>');
         }
     }
 

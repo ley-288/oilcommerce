@@ -10,6 +10,14 @@
 @endsection
 @section('content')
 
+@push('styles')
+<style>
+    .hidable-div{
+        display:none;
+    }
+</style>
+@endpush
+
 <div class="py-3 py-md-5 bg-white">
     <div class="container">
         <div class="row">

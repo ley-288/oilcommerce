@@ -40,7 +40,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-1 my-auto d-none d-sm-none d-md-block d-lg-block">
-                    <div class="navbar-brand brand-logo" href="#" id="share-image">
+                    <div class="navbar-brand brand-logo share-image" href="#">
                     </div>
                 </div>
                 <div class="col-md-5 my-auto share-title">
@@ -61,6 +61,7 @@
             </div>
         </div>
     </div>
+    <!-- MOBILE NAV -->
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
             <a class="navbar-brand d-block d-sm-block d-md-none d-lg-none" href="{{url('/')}}">
@@ -128,6 +129,24 @@
                             </form>
                         @endguest
                     </div>
+                </div>
+            </div>
+        </div>
+        <div class="d-md-none container justify-content-between mobile-share-header" style="display:none;">
+            <a class="navbar-brand d-block d-sm-block d-md-none d-lg-none" href="{{url('/')}}">
+                <p class="m-headline headline-spot racing-green color-green headline-font" style="margin-left:0;">RGM</p>
+            </a>
+            <div class="p-1 d-flex flex-row mobile-share">
+                <div class="nav">
+                    <div class="nav-link" href="#" style="color:gray;">
+                        <p style="margin-bottom: 0;">Share to </p>
+                    </div>
+                    <a class="nav-link share-to-fb facebook-icon" href="#" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" title="Share on Facebook">
+                        <i class="fa fa-facebook"></i>
+                    </a>
+                    <a class="nav-link share-to-tw twitter-icon" href="#" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" title="Share on Twitter">
+                        <i class="fa fa-twitter"></i>
+                    </a>
                 </div>
             </div>
         </div>

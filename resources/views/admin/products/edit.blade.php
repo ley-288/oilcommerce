@@ -176,7 +176,7 @@
                         </div>
                         <div class="tab-pane fade border p-3" id="content-pane" role="tabpanel" tabindex="0">
                             <div class="mb-3">
-                                <h3>Add Paragraphs</h3>
+                                <h3>Paragraphs</h3>
                             </div>
                             <div class="table-responsive">
                                 <table class="table table-sm table-bordered">
@@ -208,6 +208,31 @@
                                         @endforeach
                                     </tbody>
                                 </table>
+                                <div class="mb-3">
+                                <label>Add New Paragraphs</label>
+                                <div class="row">
+                                    @forelse($paragraphs->take(1) as $paragraph)
+                                        <div class="">
+                                            <div class="p-2 border mb-3">
+                                                Add: <input type="checkbox" name="paragraphs[{{$paragraph->id}}]" value="{{$paragraph->id}}"/>
+                                                </br>
+                                                <div class="mb-3">
+                                                    <label>Subheader:</label>
+                                                    <textarea name="paragrpahsub[{{$paragraph->id}}]" class="form-control" rows="4"></textarea>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label>Content:</label>
+                                                    <textarea name="paragrpahcon[{{$paragraph->id}}]" class="form-control" rows="4"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @empty
+                                        <div class="col-md-12">
+                                            <h3>No Paragraph Found</h3>
+                                        </div>
+                                    @endforelse
+                                </div>
+                            </div>
                             </div>
                         </div>
                     </div>
@@ -225,14 +250,12 @@
 @push('script')
 <script>
     $(document).ready(function(){
-
         $('#image').change(function(){
         $("#frames").html('');
             for (var i = 0; i < $(this)[0].files.length; i++) {
                 $("#frames").append('<img src="'+window.URL.createObjectURL(this.files[i])+'"width="100px" height="100px"/><input type="text" name="image_caption[]" class="form-control" placeholder="Add Caption"/><input type="text" name="image_credit[]" class="form-control" placeholder="Add Credit"/>');
             }
         });
-
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -263,7 +286,6 @@
                 }
             });
         });
-
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -288,7 +310,6 @@
                 }
             });
         });
-
     });
 </script>
 @endpush

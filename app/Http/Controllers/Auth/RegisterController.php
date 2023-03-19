@@ -9,6 +9,9 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
+use App\Mail\RegisteredUser;
+use Illuminate\Support\Facades\Mail;
+
 class RegisterController extends Controller
 {
     /*
@@ -64,6 +67,12 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        // Send Registration Email
+        $email = $data['email'];
+        $fullname = $data['name'];
+        $name = explode(' ', trim($fullname))[0];
+        Mail::to("$email")->send(new RegisteredUser($email, $name));
+
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],

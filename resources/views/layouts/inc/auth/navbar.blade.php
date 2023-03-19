@@ -11,19 +11,37 @@
                 </div>
                 <div class="col-md-6 my-auto">
                     <ul class="nav justify-content-end">
-                        @if (Route::has('login'))
+                        @guest
+                            @if (Route::has('login'))
+                                <li class="nav-item" style="padding:3px;">
+                                    <a class="nav-link text-muted" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                </li>
+                            @endif
+                            @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class="btn subscribe-button" href="{{ route('register') }}">
+                                        Subscribe
+                                        <i class="fa fa-rss"></i>
+                                    </a>
+                                </li>
+                            @endif
+                        @else
                             <li class="nav-item" style="padding:3px;">
-                                <a class="nav-link text-muted" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li>
-                        @endif
-                        @if (Route::has('register'))
-                            <li class="nav-item">
-                                <a class="btn subscribe-button" href="{{ route('register') }}">
-                                    Subscribe
-                                    <i class="fa fa-rss"></i>
+                                <a class="nav-link text-muted" href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                                    document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
                                 </a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
                             </li>
-                        @endif
+                            <li class="nav-item">
+                                    <a class="btn subscribe-button" href="{{url('/')}}">
+                                        <strong class="racing-green color-green">RGM</strong>
+                                    </a>
+                                </li>
+                        @endguest
                     </ul>
                 </div>
             </div>

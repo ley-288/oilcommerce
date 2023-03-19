@@ -15,8 +15,9 @@ class FrontendController extends Controller
         $newArrivalProducts = Product::latest()->take(14)->get();
         $featuredHead = Product::where('featured', '1')->latest()->take(3)->get();
         $featuredProducts = Product::where('featured', '1')->latest()->take(14)->get();
+        $archiveProducts = Product::inRandomOrder()->take(6)->get();
         $categoryList = Category::where('status', 0)->get();
-        return view('frontend.index', compact('newArrivalProducts', 'featuredHead', 'featuredProducts', 'categoryList'));
+        return view('frontend.index', compact('newArrivalProducts', 'featuredHead', 'featuredProducts', 'archiveProducts', 'categoryList'));
     }
 
     public function searchProducts(Request $request)
@@ -41,14 +42,14 @@ class FrontendController extends Controller
 
     public function newArrival()
     {
-        $newArrivalProducts = Product::latest()->take(16)->get();
+        $newArrivalProducts = Product::latest()->paginate(5);
         $categoryList = Category::where('status', 0)->get();
         return view('frontend.pages.new-arrival', compact('newArrivalProducts', 'categoryList'));
     }
 
     public function featuredProducts()
     {
-        $featuredProducts = Product::where('featured', '1')->latest()->get();
+        $featuredProducts = Product::where('featured', '1')->latest()->paginate(5);
         $categoryList = Category::where('status', 0)->get();
         return view('frontend.pages.featured-products', compact('featuredProducts', 'categoryList'));
     }
@@ -97,6 +98,16 @@ class FrontendController extends Controller
     {
         $categoryList = Category::where('status', 0)->get();
         return view('frontend.contact.directory', compact('categoryList'));
+    }
+
+    public function cookiePolicy()
+    {
+        return view('frontend.cookies');
+    }
+
+    public function privacyPolicy()
+    {
+        return view('frontend.privacy');
     }
 
     public function thankyou()
