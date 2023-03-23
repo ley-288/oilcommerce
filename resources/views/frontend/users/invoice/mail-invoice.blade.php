@@ -81,7 +81,7 @@
     <div class="text-center">
         <h2>Thank you for your order</h2>
         <p>
-            Thank you for buying with {{$appSetting->website_name ?? "Casa Carlucci"}}
+            Thank you for buying with {{$appSetting->website_name ?? "Casa Camilloni"}}
             <br>
             Your order details are below
         </p>

@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-md-6 my-auto d-none d-sm-none d-md-block d-lg-block">
                     <a class="navbar-brand brand-logo" href="{{url('/')}}">
-                        <img src="{{asset('admin/images/head-logo.png?v=1.1')}}" alt="logo" width="350" style="height:auto;"/>
+                        <img src="{{asset('admin/images/branches-blk.png?v=1.1')}}" alt="logo" width="50" style="height:auto;"/>
                     </a>
                 </div>
                 <div class="col-md-6 my-auto">

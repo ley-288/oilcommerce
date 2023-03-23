@@ -8,7 +8,7 @@
     <title>@yield('title')</title>
     <meta name="description" content="@yield('meta_description')">
     <meta name="keywords" content="@yield('meta_keyword')">
-    <meta name="author" content="Casa Carlucci">
+    <meta name="author" content="Casa Camilloni">
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
@@ -39,6 +39,7 @@
         <main>
             @yield('content')
         </main>
+        @include('layouts.inc.auth.footer')
     </div>
     <!-- Scripts -->
     <script src="{{ asset('assets/js/jquery-3.6.2.min.js') }}"></script>
@@ -54,6 +55,7 @@
     </script>
     <script src="{{ asset('assets/js/owl.carousel.min.js') }}"></script>
     <script src="{{ asset('assets/exzoom/jquery.exzoom.js') }}"></script>
+    <script src="{{ asset('assets/js/cookie.js') }}"></script>
     @yield('script')
     @livewireScripts
     @stack('scripts')

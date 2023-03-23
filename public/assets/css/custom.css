@@ -1,5 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Italianno&display=swap");
+
+@font-face {
+    font-family: "Racing Sans";
+    src: url("/admin/fonts/Racing_Sans_One/RacingSansOne-Regular.ttf")
+        format("truetype");
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Phosphate";
+    src: url("/admin/fonts/Phosphate/PhosphateSolid.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal;
+}
+
+.italiano-font {
+    font-family: Italianno;
+}
+
+.jiant {
+    font-family: "Phosphate";
+}
+
+.racing-green {
+    font-family: "Racing Sans";
+}
+
 a {
     color: #00b3ff;
+}
+
+.loading-overlay {
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 1030;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    overflow: hidden;
+}
+
+.hide-loading-overlay {
+    display: none !important;
+}
+
+.navbar-logo-comp {
+    display: flex !important;
+    justify-content: center !important;
+    flex-direction: column !important;
+    align-items: center !important;
+}
+
+.navbar-logo-font {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .carousel-item .custom-carousel-content {
@@ -330,7 +391,7 @@ a {
     font-size: 12px;
 }
 .footer-area .footer-heading {
-    font-size: 12px;
+    font-size: 18px;
     font-weight: bold;
 }
 .footer-area .footer-underline {
@@ -440,3 +501,92 @@ a {
 }
 
 /* End Admin View */
+
+/* Start Cookie Policy */
+
+#cookies {
+    bottom: 0;
+    left: 0;
+    background-color: #034225;
+    position: fixed;
+    width: 100%;
+    opacity: 0.9;
+    z-index: 999;
+    color: #ffffff;
+    padding: 5vh;
+}
+
+/* End Cookie Policy */
+
+.copyright-area {
+    padding: 14px 0px;
+    background-color: black;
+}
+.copyright-area p {
+    margin-bottom: 0px;
+    color: white;
+    font-size: 12px;
+}
+.copyright-area .social-media {
+    text-align: end;
+}
+.copyright-area .social-media a {
+    margin: 0px 10px;
+    color: white;
+    width: 20px;
+}
+
+.search-overlay {
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(20px) saturate(180%) brightness(0.3);
+    -webkit-backdrop-filter: blur(20px) saturate(180%) brightness(0.3);
+    z-index: 2000;
+}
+
+.search-bar {
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+}
+
+.search-padding {
+    padding: 0vw 20vw;
+}
+
+.overlay-hide {
+    display: none;
+}
+
+@media only screen and (min-width: 600px) {
+    .mobile-overlay {
+        display: none;
+    }
+    .mobile-share-bar {
+        display: none;
+    }
+    .cookies {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .main-navbar .top-navbar .nav-link {
+        display: none;
+    }
+    .top-navbar {
+        display: none;
+    }
+    .cookies {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+}

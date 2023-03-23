@@ -8,7 +8,7 @@
     <title>@yield('title')</title>
     <meta name="description" content="@yield('meta_description')">
     <meta name="keywords" content="@yield('meta_keyword')">
-    <meta name="author" content="Casa Carlucci">
+    <meta name="author" content="Casa Camilloni">
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
@@ -25,10 +25,18 @@
     <!-- Alertify -->
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
     @livewireStyles
     {{--@vite(['resources/sass/app.scss', 'resources/js/app.js'])--}}
 </head>
 <body>
+    <div class="loading-overlay">
+        <h1 class="italiano-font" style="margin-left:0;">Casa Camilloni</h1>
+        <img src="{{ asset('admin/images/loading.gif') }}" class='mt-3 loading-gif' height='25' width='25' alt='RGM'>
+    </div>
     <div id="app">
         @include('layouts.inc.frontend.navbar')
         <main>
@@ -47,9 +55,15 @@
                 alertify.notify(event.detail.text, event.detail.type);
             }
         });
+        $(document).ready(function(){
+            const loadingOverlay = document.querySelector('.loading-overlay');
+            loadingOverlay.classList.toggle('hide-loading-overlay');
+        });
     </script>
     <script src="{{ asset('assets/js/owl.carousel.min.js') }}"></script>
     <script src="{{ asset('assets/exzoom/jquery.exzoom.js') }}"></script>
+    <script src="{{ asset('assets/js/custom.js') }}"></script>
+    <script src="{{ asset('assets/js/cookie.js') }}"></script>
     @yield('script')
     @livewireScripts
     @stack('scripts')

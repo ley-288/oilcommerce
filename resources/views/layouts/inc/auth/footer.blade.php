@@ -1,29 +1,4 @@
-<div class="search-overlay overlay-hide">
-    <div class="col-md-12">
-        <form action="{{url('search')}}" method="get" role="search">
-            <div class="search-padding d-flex flex-column text-center">
-                <div class="text-white">
-                    <p><strong class="italiano-font" style="font-size: 1.2rem;">Casa Camilloni</strong></p>
-                </div>
-                </br></br>
-                <div class="input-group">
-                    <input type="search" name="search" value="{{Request::get('search')}}" placeholder="Search.." class="form-control search-bar" />
-                    <button class="btn bg-white search-button" type="submit">
-                        <i class="fa fa-search"></i>
-                    </button>
-                </div>
-                </br></br>
-                <div class="mt-5 text-white">
-                    <div class="close-search-overlay">
-                        Close
-                        <i class="fa fa-close"></i>
-                    </div>
-                </div>
-            </div>
-        </form>
-    </div>
-</div>
-<div class="hidable-div">
+<div>
     <div class="footer-area">
         <div class="container">
             <div class="row">
@@ -39,25 +14,10 @@
                     <div class="mb-2"><a href="{{url('/privacy-policy')}}" relatedProductItem>Privacy Policy</a></div>
                 </div>
                 <div class="col-md-3">
-                    <a href="{{url('/article')}}" relatedProductItem><h4 class="footer-heading">Shopping</h4></a>
+                    <a href="{{url('/article')}}" relatedProductItem><h4 class="footer-heading">Articles</h4></a>
+                    <div class="mb-2"><a href="{{url('/profile')}}" relatedProductItem>Profile</a></div>
                     <div class="mb-2"><a href="{{url('/wishlist')}}" relatedProductItem>Wishlist</a></div>
                     <div class="mb-2"><a href="{{url('/cart')}}" relatedProductItem>Cart</a></div>
-                    <div class="mb-2"><a href="{{url('orders')}}" relatedProductItem>My Orders</a></div>
-                    @guest
-                        <div class="mb-2"><a href="{{ route('login') }}" relatedProductItem>{{ __('Login') }}</a></div>
-                        <div class="mb-2"><a href="{{ route('register') }}" relatedProductItem>{{ __('Register') }}</a></div>
-                    @else
-                        <div class="mb-2"><a href="{{url('/profile')}}" relatedProductItem>My Profile</a></div>
-                        <div class="mb-2"><a href="{{ route('logout') }}"
-                                                onclick="event.preventDefault();
-                                                                document.getElementById('logout-form').submit();" relatedProductItem>
-                                {{ __('Logout') }}
-                            </a>
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                @csrf
-                            </form>
-                        </div>
-                    @endguest
                 </div>
                 <div class="col-md-3">
                     <h4 class="footer-heading">Reach Us</h4>
@@ -88,7 +48,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8">
-                    <p class=""> &copy; 2023 - {{$appSetting->website_name ?? 'Racing Green'}}. All rights reserved.</p>
+                    <p class=""> &copy; 2023 - {{$appSetting->website_name ?? 'Casa Camilloni'}}. All rights reserved.</p>
                 </div>
                 <div class="col-md-4">
                     <div class="social-media">
@@ -133,4 +93,5 @@
         /* if "OK" clicked, call the JS function to hide the popup and set the cookie */
         echo" <div><a onClick='hideCookie();' class='cookieLinks btn btn-light' href=#>Accept</a></div></div>";
     }
+
 ?>

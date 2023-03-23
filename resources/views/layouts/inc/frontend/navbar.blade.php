@@ -2,9 +2,20 @@
     <div class="top-navbar">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-6 my-auto d-none d-sm-none d-md-block d-lg-block">
+                <div class="col-md-3 my-auto">
+                    <ul class="nav justify-content-start">
+                        <li class="nav-item search-btn">
+                            <i class="fa fa-search"></i>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-6 my-auto d-none d-sm-none d-md-block d-lg-block navbar-logo-comp">
                     <a class="navbar-brand brand-logo" href="{{url('/')}}">
-                        <img src="{{asset('admin/images/head-logo.png?v=1.1')}}" alt="logo" width="350" style="height:auto;"/>
+                        <div class="navbar-logo-font">
+                            <img src="{{asset('admin/images/branches-blk.png?v=1.1')}}" alt="logo" width="75" style="height:auto;"/>
+                            <h1 class="italiano-font m-0">Casa Camilloni</h1>
+                            <p class="fw-light m-0" style="font-size:10px;">- DAL 1919 -</p>
+                        </div>
                     </a>
                 </div>
                 {{--
@@ -19,13 +30,15 @@
                     </form>
                 </div>
                 --}}
-                <div class="col-md-6 my-auto">
+                <div class="col-md-3 my-auto">
                     <ul class="nav justify-content-end">
+                        {{--
                         <li class="nav-item">
                             <a class="nav-link" href="{{url('collections')}}">
                                 <i class="fa fa-search"></i>
                             </a>
                         </li>
+                        --}}
                         <li class="nav-item">
                             <a class="nav-link" href="{{url('cart')}}">
                                 <div class="notif-count-flex">
@@ -42,6 +55,7 @@
                                 </div>
                             </a>
                         </li>
+                        {{--
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
@@ -76,6 +90,7 @@
                                 </ul>
                             </li>
                         @endguest
+                        --}}
                     </ul>
                 </div>
             </div>
